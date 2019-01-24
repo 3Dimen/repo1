@@ -1,0 +1,48 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? (+1).3
+4 : Int
+? ord.'A'
+65 : Int
+? (ord;(+1)).'A'
+66 : Int
+? (ord;((+1);chr)).'A'
+'B' : Char
+? ((ord;(+1));chr).'A'
+'B' : Char
+? ((+1);(+1);(+1);(+2)).3
+8 : Int
+? (\x->x).1
+1 : Int
+? (\x->x).(+1)
+flip.(+).1 : Int -> Int
+? (\x->x).(1+)
+(1 +) : Int -> Int
+? [(+1),(*2), (\x->x+1), (\x->x+9)]
+[flip.(+).1, flip.(*).2, v62, v61] : [Int -> Int]
+? foldr.(;).id.[(+1),(*2), (\x->x+1), (\x->x+9)]
+flip.(+).1 ; foldr.(;).id.[flip.(*).2, v62, v61] : Int -> Int
+? (foldr.(;).id.[(+1),(*2), (\x->x+1), (\x->x+9)]).3
+18 : Int
+? id.3
+3 : Int
+? (foldr.(;).(\x->x).[(+1),(*2), (\x->x+1), (\x->x+9)]).3
+18 : Int
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/sep15/curry.gs
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/sep15/curry.gs
+? add1.(1,2)
+3 : Int
+? curry.add1.1 . 2
+3 : Int
+? 

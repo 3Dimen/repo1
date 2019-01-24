@@ -1,0 +1,10 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? :t (.)
+(.) : (a -> b) -> a -> b
+? 

@@ -1,0 +1,41 @@
+The semantic functions (the interpreter)
+
+te gives the semantics of expressions and ts that of statements
+
+> te : Exp -> Expmodel
+> ts : Statement -> Stmtmodel
+> tae : Aexp -> Expmodel
+
+> tbe : Bexp -> Expmodel
+
+> te.(Arith.ae)   = tae.ae
+> te.(Boolean.be) = tbe.be
+
+> tae.(Icon.i).state     = Ival.i
+> tae.(Ivar.v).state     = lookup.state.v
+> tae.(t `Add` t').state = tae.t.state `plusmodel` tae.t'.state
+> tae.(t `Sub` t').state = tae.t.state `minusmodel` tae.t'.state
+> tae.(t `Mul` t').state = tae.t.state `mulmodel` tae.t'.state
+> tae.(t `Div` t').state = tae.t.state `divmodel` tae.t'.state
+
+> tbe.(Bcon.b).state    = Bval.b
+> tbe.(Bvar.v).state    = lookup.state.v
+> tbe.(And.t.t').state  = tbe.t.state `andmodel` tbe.t'.state
+> tbe.(Or.t.t').state   = tbe.t.state `ormodel` tbe.t'.state
+> tbe.(Less.t.t').state = tae.t.state `lessmodel` tae.t'.state
+> tbe.(Eql.t.t').state   = tae.t.state `eqmodel` tae.t'.state
+
+> ts.Skip.state          = state
+> ts.Abort.state         = error."Program aborted"
+> ts.(Assgn.v.t).state   = setstate.state.v.(te.t.state)
+> ts.(s1 `Seq` s2).state = (ts.s1;ts.s2).state
+> ts.(If1.be.s).state    = (if1model.(tbe.be).(ts.s)).state
+
+> ts.(Ifelse.be.s.s').state = (ifelsemodel.(tbe.be).(ts.s).(ts.s')).state
+> ts.(While.be.s).state     = (whilemodel.(tbe.be).(ts.s)).state
+
+> prog = Assgn."i".(Arith.(Icon.1)) `Seq` p2
+> p2 = While.c.p3
+> c = Ivar."i" `Less` Icon.10
+> p3 = Assgn."i".(Arith.(Ivar."i" `Add` Icon.1))
+> state = [("i", Ival.2)]

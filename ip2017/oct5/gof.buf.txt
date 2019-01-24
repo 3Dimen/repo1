@@ -1,0 +1,208 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi P Mody  1995-2016
+
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? x
+1 : Int
+? 
+ERROR "/home/dipesh/oct5.gs" (line 2): ctype target nTree must match header
+
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? 
+ERROR "/home/dipesh/oct5.gs" (line 3): ctype target Int must match header
+
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? 
+ERROR "/home/dipesh/oct5.gs" (line 7): Syntax error in declaration (unexpected separator)
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? t1
+Br.1.[Br.2.[Br.5.[]], Br.3.[], Br.4.[]] : NTree
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? :dfs
+Command not recognised.  Type :? for help
+? :t dfs
+dfs : NTree -> [Int]
+? dfs.t1
+[1, 2, 5, 3, 4] : [Int]
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? dfs.t1
+[1, 2, 5, 3, 4] : [Int]
+? takeWhile.(<3).[1,2,3,4,5,6,7]
+[1, 2] : [Int]
+? dropWhile.(<3).[1,2,3,4,5,6,7]
+[3, 4, 5, 6, 7] : [Int]
+? :t iterate
+iterate : (a -> a) -> a -> [a]
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? :t iterate'
+iterate' : (a -> a) -> a -> [a]
+? take.20.(iterate'. (2*).1)
+[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288] : [Int]
+? 
+ERROR "/home/dipesh/oct5.gs" (line 15): Undefined variable "x"
+? 
+ERROR "/home/dipesh/oct5.gs" (line 15): Undefined variable "x"
+? 
+ERROR "/home/dipesh/oct5.gs" (line 15): Type error in function binding
+*** term           : nextlevel
+*** type           : [NTree] -> [[NTree]]
+*** does not match : [NTree] -> [NTree]
+
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? t1
+Br.1.[Br.2.[Br.5.[]], Br.3.[], Br.4.[]] : NTree
+? nextlevel.[t1]
+[Br.2.[Br.5.[]], Br.3.[], Br.4.[]] : [NTree]
+? nextlevel.(nextlevel.[t1])
+[Br.5.[]] : [NTree]
+? nextlevel.(nextlevel.(nextlevel.[t1]))
+[] : [NTree]
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? :t thislevel
+thislevel : [NTree] -> [Int]
+? nextlevel.(nextlevel.[t1])
+[Br.5.[]] : [NTree]
+? nextlevel.[t1]
+[Br.2.[Br.5.[]], Br.3.[], Br.4.[]] : [NTree]
+? thislevel.[t1]
+[1] : [Int]
+? thislevel.(nextlevel.[t1])
+[2, 3, 4] : [Int]
+? nextlevel.(nextlevel.[t1])
+[Br.5.[]] : [NTree]
+? thislevel.(nextlevel.(nextlevel.[t1]))
+[5] : [Int]
+? 1 !=2
+
+ERROR: Undefined variable "!="
+? 1 /= 2
+True : Bool
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? :t bfs
+bfs : [NTree] -> [[NTree]]
+? bfs.[t1]
+[[Br.1.[Br.2.[Br.5.[]], Br.3.[], Br.4.[]]], [Br.2.[Br.5.[]], Br.3.[], Br.4.[]], [Br.5.[]]] : [[NTree]]
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? bfs.[t1]
+[Br.1.[Br.2.[Br.5.[]], Br.3.[], Br.4.[]], Br.2.[Br.5.[]], Br.3.[], Br.4.[], Br.5.[]] : [NTree]
+? 
+ERROR "/home/dipesh/oct5.gs" (line 18): Type error in application
+*** expression     : map.(thislevel.(concat.(takeWhile.(flip.(/=).[]).(iterate.nextlevel.tl))))
+*** term           : thislevel.(concat.(takeWhile.(flip.(/=).[]).(iterate.nextlevel.tl)))
+*** type           : [Int]
+*** does not match : a -> b
+
+? 
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? :t bfs
+bfs : [NTree] -> [Int]
+? bfs.([t1]
+
+ERROR: Syntax error in expression (unexpected end of input)
+? bfs.([t1])
+[1, 2, 3, 4, 5] : [Int]
+? 
+ERROR "/home/dipesh/oct5.gs" (line 18): Syntax error in expression (unexpected token)
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? o
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? :t bfs
+bfs : NTree -> [Int]
+? bfs.([t1])
+
+ERROR: Type error in application
+*** expression     : bfs.[t1]
+*** term           : [t1]
+*** type           : [NTree]
+*** does not match : NTree
+
+? bfs.t1
+[1, 2, 3, 4, 5] : [Int]
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? bfs.t1
+[1, 2, 3, 4, 5] : [Int]
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? :t bfs
+bfs : NTree -> [Int]
+? :t bfs'
+bfs' : NTree -> [Int]
+? bfs.t1
+[1, 2, 3, 4, 5] : [Int]
+? bfs'.t1
+[1, 2, 3, 4, 5] : [Int]
+? 
+ERROR "/home/dipesh/oct5.gs" (line 19): Equations give different arities for "bfs'"
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? :t bfs2
+bfs2 : [NTree] -> [NTree] -> [NTree]
+? bfs2.[t1].[]
+[Br.2.[Br.5.[]], Br.3.[], Br.4.[]] : [NTree]
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? :t bfs2
+bfs2 : [NTree] -> [Int] -> [Int]
+? bfs2.[t1].[]
+[1, 2, 3, 4, 5] : [Int]
+? 
+Gofer session for:
+/home/dipesh/gofer/pusimple.pre
+/home/dipesh/oct5.gs
+? bfs2.[t1].[]
+[1, 2, 5, 3, 4] : [Int]
+? 

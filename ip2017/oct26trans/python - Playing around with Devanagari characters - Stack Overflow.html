@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>python - Playing around with Devanagari characters - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="https://stackoverflow.com/opensearch.xml">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="stackoverflow.com">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Playing around with Devanagari characters">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I have something like  
+
+a = &quot;बिक्रम मेरो नाम हो&quot;
+I want to achieve something like
+
+a[0] = बि a[1] = क्र a[3] = म
+but as म takes 4 bytes while बि takes 8 bytes I am not able to get to that straig...">
+    <meta property="og:url" content="https://stackoverflow.com/questions/6805311/playing-around-with-devanagari-characters">
+    <link rel="canonical" href="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/playing-around-with-devanagari-characters_003.html">
+
+    
+    
+    <script src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/osd.js"></script><script src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/pubads_impl_rendering_162.js"></script><script src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/ads"></script><script src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/rules-p-c1rF4kxgLUzNc.js"></script><script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/quant.js"></script><script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/beacon.js"></script><script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/analytics.js"></script><script src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'Playing around with Devanagari characters'" href="https://stackoverflow.com/feeds/question/6805311">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/6805311/playing-around-with-devanagari-characters">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/6805311/playing-around-with-devanagari-characters">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/6805311/playing-around-with-devanagari-characters">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:6805311});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '6805311');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', true); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","serverTime":1509006024,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"70822e184ebab649287220ba9c5ac80a","tid":"18fc7ba0-e925-657e-0e8c-91f988bdfc63","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"topBar":{"showNewFeatureNotice":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"bb287aeaeccd","js/moderator.en.js":"f4af50cb7bc8","js/full-anon.en.js":"9e1c2ebf0145","js/full.en.js":"4c5792e2b72b","js/wmd.en.js":"a21be7b1d7d2","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"ed529b11d30c","js/help.en.js":"118cb359bcc6","js/tageditor.en.js":"8c8d95583787","js/tageditornew.en.js":"1eb06d274c48","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"96e2390a427f","js/tagsuggestions.en.js":"78eee7c19ab2","js/post-validation.en.js":"1984a2d4126b","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"f76a126b9b96","js/keyboard-shortcuts.en.js":"86c5a959e203","js/external-editor.en.js":"b46c950d6c5a","js/adops.en.js":"9a6a7812a212","js/external-editor.en.js":"b46c950d6c5a","js/snippet-javascript.en.js":"baa5f1a87f26","js/snippet-javascript-codemirror.en.js":"9a2effee39fe"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css"><style>body,.top-bar{margin-top:1.9em}</style></noscript>
+<script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/full-anon.js"></script><link rel="stylesheet" href="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/clc.css" type="text/css"><script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/snippet-javascript.js"></script><script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/post-validation.js"></script><script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/prettify-full.js"></script><script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/external-editor.js"></script><link rel="prefetch" href="https://securepubads.g.doubleclick.net/static/3p_cookie.html"></head>
+<body class="question-page new-topbar">
+            <script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/185901-159836282584097.js"></script>
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar _fixed _scrolling">
+    <div class="-container">
+        <div class="-main">
+            
+                <a href="https://stackoverflow.com/" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                   <span class="-img">Stack Overflow</span>
+                </a>
+
+            <nav class="navigation" role="navigation" aria-label="site navigation">
+                <ol class="-list">
+    <li class="-item _current">
+        <a id="nav-questions" href="https://stackoverflow.com/questions" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Questions</a>
+    </li>
+    <li class="-item">
+        <a id="nav-jobs" href="https://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">Developer Jobs</a>
+    </li>
+    <li class="-item">
+        <a id="nav-tags" href="https://stackoverflow.com/tags" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+    </li>
+    <li class="-item">
+        <a id="nav-users" href="https://stackoverflow.com/users" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Users</a>
+    </li>
+                </ol>
+            </nav>
+
+        </div>
+        
+            <form id="search" action="/search" method="get" class="searchbar" autocomplete="off" role="search">
+                <input name="q" placeholder="Search…" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field" type="text">
+                <button type="submit" aria-label="Search..." class="btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+            </form>
+
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                    <a href="https://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+    <a href="https://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-stackoverflow site-icon" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-stackoverflowmeta site-icon" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f6805311%2fplaying-around-with-devanagari-characters" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+
+        </div>
+        <ol class="-list">
+
+
+    <li class="-item"><a href="#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+                <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 171 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a>
+    </li>
+
+        </ol>
+    </nav>
+        <div class="-ctas">
+                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f6805311%2fplaying-around-with-devanagari-characters" class="login-link btn-clear" rel="nofollow">Log In</a>
+                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link btn-topbar-primary" rel="nofollow">Sign Up</a>
+
+        </div>
+</div>
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+        StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+    <div class="container _full ">
+        
+
+
+        <div id="content" class="snippet-hidden">
+
+
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+
+
+
+<div class="s-hero hero-container">
+    <div class="-container g-row jc-sp-between ai-center">
+        <div class="g-col6">
+            <h1 class="-title">Learn, Share, Build</h1>
+            <p class="-paragraph">Each month, over 50 million developers come to Stack Overflow to learn, share their knowledge, and build their careers.</p>
+            <p class="-paragraph">Join the world’s largest developer community.</p>
+        </div>
+        
+        <div class="s-signup _hero g-col5">
+
+            <div id="openid-buttons" class="-social">
+                    <div class="major-provider btn _block _medium _google" data-provider="google" data-oauthserver="https://accounts.google.com/o/oauth2/auth" data-oauthversion="2.0">Google</div>
+                    <div class="major-provider btn _block _medium _facebook" data-provider="facebook" data-oauthserver="https://www.facebook.com/v2.0/dialog/oauth" data-oauthversion="2.0">Facebook</div>
+                            </div>
+
+
+            <small class="-divider text-centered">or</small>
+
+            <form id="login-form" action="/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f6805311%2fplaying-around-with-devanagari-characters" method="POST">
+        
+                <input name="fkey" value="70822e184ebab649287220ba9c5ac80a" type="hidden">
+
+                <input name="ssrc" value="" type="hidden">
+
+                <input id="oauth_version" name="oauth_version" value="" type="hidden">
+                <input id="oauth_server" name="oauth_server" value="" type="hidden">
+
+                    <div id="se-login-fields">
+
+                        <input name="legalLinksShown" value="1" type="hidden">
+
+                        <div class="input-group">
+                            <div class="g-row">
+                                <label for="display-name" class="g-col -fill">Display name</label>
+                                <div class="g-col">
+                                    <input id="display-name" name="inline-display-name" class="f-input" placeholder="J. Doe" data-error-my="right top" data-error-at="left center" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="g-row">
+                                <label for="email" class="g-col -fill">Email address</label>
+                                <div class="g-col">
+                                    <input id="email" name="inline-email" maxlength="100" class="f-input" placeholder="you@example.com" data-error-my="right top" data-error-at="left center" type="email">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="g-row">
+                                <label for="password" class="g-col -fill">Password</label>
+                                <div class="g-col">
+                                    <input id="password" name="inline-password" class="js-inline-signup f-input" placeholder="********" data-error-my="right top" data-error-at="left center" type="password">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="button-group g-row ai-center jc-sp-between">
+                            <input id="submit-button" name="submit-button" class="btn-outlined -white _medium _block" value="Sign Up" type="button">
+
+                            <small class="g-col -policy js-terms">By registering, you agree to the <a href="https://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank" class="-link">privacy policy</a> and <a href="https://stackexchange.com/legal/terms-of-service" name="tos" target="_blank" class="-link">terms of service</a>.</small>
+                        </div>
+                    </div>
+            </form>
+            <script>
+                StackExchange.ready(function () {
+                    StackExchange.InlineAuth.init();
+                })
+            </script>
+        </div>
+
+            <a id="close" href="#" class="js-dismiss -dismiss" title="dismiss"><svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"></path></svg></a>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 7;
+        } else if ($("body").hasClass("question-page")) {
+            location = 7;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 6;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('.hero-container #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".hero-container").fadeOut("fast", function () {
+                        $(".hero-container").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>    <div class="inner-content">
+        <div id="question-header">
+                <h1 itemprop="name"><a href="https://stackoverflow.com/questions/6805311/playing-around-with-devanagari-characters" class="question-hyperlink">Playing around with Devanagari characters</a></h1>
+
+            
+<div class="aside-cta" role="navigation" aria-label="ask new question">
+    <a href="https://stackoverflow.com/questions/ask" class="btn-outlined">Ask Question</a>
+</div>
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="6805311" id="question">
+
+    <div id="dfp-tlb" class="everyonelovesstackoverflow" data-google-query-id="CLmatMHtjdcCFQ6GaAodbogCuA" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/stackoverflow.com/lb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/stackoverflow.com/lb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/stackoverflow.com/lb/question-pages_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" width="728" height="90" frameborder="0"></iframe></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="6805311" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">24</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>6</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I have something like  </p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pln">a </span><span class="pun">=</span><span class="pln"> </span><span class="str">"बिक्रम मेरो नाम हो"</span></code></pre>
+
+<p>I want to achieve something like</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pln">a</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">बि</span><span class="pln"> a</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">क्र</span><span class="pln"> a</span><span class="pun">[</span><span class="lit">3</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">म</span></code></pre>
+
+<p>but as म takes 4 bytes while बि takes 8 bytes I am not able to get to that straight.
+So what could be done to achieve that? In Python.</p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://stackoverflow.com/questions/tagged/python" class="post-tag js-gps-track" title="show questions tagged 'python'" rel="tag">python</a> <a href="https://stackoverflow.com/questions/tagged/unicode" class="post-tag js-gps-track" title="show questions tagged 'unicode'" rel="tag">unicode</a> <a href="https://stackoverflow.com/questions/tagged/indic" class="post-tag js-gps-track" title="show questions tagged 'indic'" rel="tag">indic</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/q/6805311" title="short permalink to this question" class="short-link" id="link-post-6805311">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/6805311/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/6805311/revisions" title="show all edits to this post">edited <span title="2015-07-15 15:23:19Z" class="relativetime">Jul 15 '15 at 15:23</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/1768232/durron597"><div class="gravatar-wrapper-32"><img src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/P6XgG.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/1768232/durron597">durron597</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 24,937" dir="ltr">24.9k</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="62 silver badges"><span class="badge2"></span><span class="badgecount">62</span></span><span title="114 bronze badges"><span class="badge3"></span><span class="badgecount">114</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2011-07-24 06:26:21Z" class="relativetime">Jul 24 '11 at 6:26</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/441294/meadhikari"><div class="gravatar-wrapper-32"><img src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/a8c1a83144346ecc213f789466b0cfb8.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/441294/meadhikari">meadhikari</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">365</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="22 bronze badges"><span class="badge3"></span><span class="badgecount">22</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6805311" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-8080496" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I never really played with 
+devnagri, which i am definitely going try now :P, but knowing devnagri 
+script, I have a feeling that that the difference in 'ma' and 'be' as 
+you mentioned might be because, in devnagri "ma" is one character , but 
+"be" = "ba" + "e" (ba mai e ki maatra! :P  is what i mean). If the 
+difference in representation is because of that,  then you should be 
+able to separate the 'matras' or one and half letters like 'kra' by 
+doing some simple bit operations to check and saperate, then out them in
+ a List like data structure. Do post a solution if you find one. I am 
+curious!</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/726239/shaunak" title="10,134 reputation" class="comment-user">Shaunak</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment8080496_6805311"><span title="2011-07-24 06:45:21Z" class="relativetime-clean">Jul 24 '11 at 6:45</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8876149" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">#something like this may help # <a href="https://gist.github.com/950405" rel="nofollow noreferrer">gist.github.com/950405</a></span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/139150/shantanuo" title="9,552 reputation" class="comment-user">shantanuo</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment8876149_6805311"><span title="2011-09-09 02:47:34Z" class="relativetime-clean">Sep 9 '11 at 2:47</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6805311" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2>
+                                5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="https://stackoverflow.com/questions/6805311/playing-around-with-devanagari-characters?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://stackoverflow.com/questions/6805311/playing-around-with-devanagari-characters?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="https://stackoverflow.com/questions/6805311/playing-around-with-devanagari-characters?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>    
+                </div>    
+
+
+
+
+  
+<a name="6806203"></a>
+<div id="answer-6806203" class="answer accepted-answer" data-answerid="6806203" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="6806203" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">18</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The algorithm for splitting text into grapheme clusters is given in <a href="http://www.unicode.org/reports/tr29/tr29-17.html#Grapheme_Cluster_Boundaries">Unicode Annex 29</a>,
+ section 3.1. I'm not going to implement the full algorithm for you 
+here, but I'll show you roughly how to handle the case of Devanagari, 
+and then you can read the Annex for yourself and see what else you need 
+to implement.</p>
+
+<p>The <a href="http://docs.python.org/3/library/unicodedata.html"><code>unicodedata</code> module</a> contains the information you need to detect the grapheme clusters.</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> unicodedata
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> a </span><span class="pun">=</span><span class="pln"> </span><span class="str">"बिक्रम मेरो नाम हो"</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="pun">[</span><span class="pln">unicodedata</span><span class="pun">.</span><span class="pln">name</span><span class="pun">(</span><span class="pln">c</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> c </span><span class="kwd">in</span><span class="pln"> a</span><span class="pun">]</span><span class="pln">
+</span><span class="pun">[</span><span class="str">'DEVANAGARI LETTER BA'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI VOWEL SIGN I'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI LETTER KA'</span><span class="pun">,</span><span class="pln"> 
+ </span><span class="str">'DEVANAGARI SIGN VIRAMA'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI LETTER RA'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI LETTER MA'</span><span class="pun">,</span><span class="pln">
+ </span><span class="str">'SPACE'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI LETTER MA'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI VOWEL SIGN E'</span><span class="pun">,</span><span class="pln">
+ </span><span class="str">'DEVANAGARI LETTER RA'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI VOWEL SIGN O'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'SPACE'</span><span class="pun">,</span><span class="pln">
+ </span><span class="str">'DEVANAGARI LETTER NA'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI VOWEL SIGN AA'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI LETTER MA'</span><span class="pun">,</span><span class="pln">
+ </span><span class="str">'SPACE'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI LETTER HA'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'DEVANAGARI VOWEL SIGN O'</span><span class="pun">]</span></code></pre>
+
+<p>In Devanagari, each grapheme cluster consists of an initial letter, 
+optional pairs of virama (vowel killer) and letter, and an optional 
+vowel sign. In regular expression notation that would be <code>LETTER (VIRAMA LETTER)* VOWEL?</code>. You can tell which is which by looking up the <a href="http://www.unicode.org/versions/Unicode6.0.0/ch04.pdf">Unicode category</a> for each code point:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="pun">[</span><span class="pln">unicodedata</span><span class="pun">.</span><span class="pln">category</span><span class="pun">(</span><span class="pln">c</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> c </span><span class="kwd">in</span><span class="pln"> a</span><span class="pun">]</span><span class="pln">
+</span><span class="pun">[</span><span class="str">'Lo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Mc'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Lo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Mn'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Lo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Lo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Zs'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Lo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Mn'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Lo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Mc'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Zs'</span><span class="pun">,</span><span class="pln">
+ </span><span class="str">'Lo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Mc'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Lo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Zs'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Lo'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Mc'</span><span class="pun">]</span></code></pre>
+
+<p>Letters are category <code>Lo</code> (Letter, Other), vowel signs are category <code>Mc</code> (Mark, Spacing Combining), virama is category <code>Mn</code> (Mark, Nonspacing) and spaces are category <code>Zs</code> (Separator, Space).</p>
+
+<p>So here's a rough approach to split out the grapheme clusters:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="kwd">def</span><span class="pln"> splitclusters</span><span class="pun">(</span><span class="pln">s</span><span class="pun">):</span><span class="pln">
+    </span><span class="str">"""Generate the grapheme clusters for the string s. (Not the full
+    Unicode text segmentation algorithm, but probably good enough for
+    Devanagari.)
+
+    """</span><span class="pln">
+    virama </span><span class="pun">=</span><span class="pln"> u</span><span class="str">'\N{DEVANAGARI SIGN VIRAMA}'</span><span class="pln">
+    cluster </span><span class="pun">=</span><span class="pln"> u</span><span class="str">''</span><span class="pln">
+    last </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">None</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pln"> c </span><span class="kwd">in</span><span class="pln"> s</span><span class="pun">:</span><span class="pln">
+        cat </span><span class="pun">=</span><span class="pln"> unicodedata</span><span class="pun">.</span><span class="pln">category</span><span class="pun">(</span><span class="pln">c</span><span class="pun">)[</span><span class="lit">0</span><span class="pun">]</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> cat </span><span class="pun">==</span><span class="pln"> </span><span class="str">'M'</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> cat </span><span class="pun">==</span><span class="pln"> </span><span class="str">'L'</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> last </span><span class="pun">==</span><span class="pln"> virama</span><span class="pun">:</span><span class="pln">
+            cluster </span><span class="pun">+=</span><span class="pln"> c
+        </span><span class="kwd">else</span><span class="pun">:</span><span class="pln">
+            </span><span class="kwd">if</span><span class="pln"> cluster</span><span class="pun">:</span><span class="pln">
+                </span><span class="kwd">yield</span><span class="pln"> cluster
+            cluster </span><span class="pun">=</span><span class="pln"> c
+        last </span><span class="pun">=</span><span class="pln"> c
+    </span><span class="kwd">if</span><span class="pln"> cluster</span><span class="pun">:</span><span class="pln">
+        </span><span class="kwd">yield</span><span class="pln"> cluster
+
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> list</span><span class="pun">(</span><span class="pln">splitclusters</span><span class="pun">(</span><span class="pln">a</span><span class="pun">))</span><span class="pln">
+</span><span class="pun">[</span><span class="str">'बि'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'क्र'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'म'</span><span class="pun">,</span><span class="pln"> </span><span class="str">' '</span><span class="pun">,</span><span class="pln"> </span><span class="str">'मे'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'रो'</span><span class="pun">,</span><span class="pln"> </span><span class="str">' '</span><span class="pun">,</span><span class="pln"> </span><span class="str">'ना'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'म'</span><span class="pun">,</span><span class="pln"> </span><span class="str">' '</span><span class="pun">,</span><span class="pln"> </span><span class="str">'हो'</span><span class="pun">]</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/a/6806203" title="short permalink to this answer" class="short-link" id="link-post-6806203">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/6806203/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/6806203/revisions" title="show all edits to this post">edited <span title="2014-02-05 23:47:52Z" class="relativetime">Feb 5 '14 at 23:47</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-07-24 10:12:32Z" class="relativetime">Jul 24 '11 at 10:12</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/68063/gareth-rees"><div class="gravatar-wrapper-32"><img src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/093d6dc5c8295d32bcb8e76c7c66455a.jpeg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/68063/gareth-rees">Gareth Rees</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 47,468" dir="ltr">47.5k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="94 silver badges"><span class="badge2"></span><span class="badgecount">94</span></span><span title="134 bronze badges"><span class="badge3"></span><span class="badgecount">134</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6806203" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6806203" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<div id="dfp-mlb" class="everyonelovesstackoverflow" data-google-query-id="CLqatMHtjdcCFQ6GaAodbogCuA" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/stackoverflow.com/mlb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/stackoverflow.com/mlb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/stackoverflow.com/mlb/question-pages_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" width="728" height="90" frameborder="0"></iframe></div></div>
+  
+<a name="6805416"></a>
+<div id="answer-6805416" class="answer" data-answerid="6805416" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="6805416" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">13</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>So, you want to achieve something like this</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pln">a</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">बि</span><span class="pln"> a</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">क्र</span><span class="pln"> a</span><span class="pun">[</span><span class="lit">3</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">म</span></code></pre>
+
+<p>My advice is to ditch the idea that string indexing corresponds to 
+the characters you see on the screen.  Devanagari, as well as several 
+other scripts, do not play well with programmers who grew up with Latin 
+characters.  I suggest reading the Unicode standard chapter 9 (<a href="http://www.unicode.org/versions/Unicode6.0.0/">available here</a>).</p>
+
+<p>It looks like what you are trying to do is break a string into 
+grapheme clusters.  String indexing by itself will not let you do this. 
+ Hangul is another script which plays poorly with string indexing, 
+although with combining characters, even something as familiar as 
+Spanish will cause problems.</p>
+
+<p>You will need an external library such as ICU to achieve this (unless you have lots of free time).  ICU has Python bindings.</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pun">&gt;&gt;&gt;</span><span class="pln"> a </span><span class="pun">=</span><span class="pln"> u</span><span class="str">"बिक्रम मेरो नाम हो"</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> icu
+    </span><span class="com"># Note: This next line took a lot of guesswork.  The C, C++, and Java</span><span class="pln">
+    </span><span class="com"># interfaces have better documentation.</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> b </span><span class="pun">=</span><span class="pln"> icu</span><span class="pun">.</span><span class="typ">BreakIterator</span><span class="pun">.</span><span class="pln">createCharacterInstance</span><span class="pun">(</span><span class="pln">icu</span><span class="pun">.</span><span class="typ">Locale</span><span class="pun">())</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> b</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="pln">a</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> j </span><span class="kwd">in</span><span class="pln"> b</span><span class="pun">:</span><span class="pln">
+</span><span class="pun">...</span><span class="pln">     s </span><span class="pun">=</span><span class="pln"> a</span><span class="pun">[</span><span class="pln">i</span><span class="pun">:</span><span class="pln">j</span><span class="pun">]</span><span class="pln">
+</span><span class="pun">...</span><span class="pln">     </span><span class="kwd">print</span><span class="pln"> </span><span class="str">'|'</span><span class="pun">,</span><span class="pln"> s</span><span class="pun">,</span><span class="pln"> len</span><span class="pun">(</span><span class="pln">s</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">...</span><span class="pln">     i </span><span class="pun">=</span><span class="pln"> j
+</span><span class="pun">...</span><span class="pln"> 
+</span><span class="pun">|</span><span class="pln"> </span><span class="pun">बि</span><span class="pln"> </span><span class="lit">2</span><span class="pln">
+</span><span class="pun">|</span><span class="pln"> </span><span class="pun">क्</span><span class="pln"> </span><span class="lit">2</span><span class="pln">
+</span><span class="pun">|</span><span class="pln"> </span><span class="pun">र</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+</span><span class="pun">|</span><span class="pln"> </span><span class="pun">म</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+</span><span class="pun">|</span><span class="pln">   </span><span class="lit">1</span><span class="pln">
+</span><span class="pun">|</span><span class="pln"> </span><span class="pun">मे</span><span class="pln"> </span><span class="lit">2</span><span class="pln">
+</span><span class="pun">|</span><span class="pln"> </span><span class="pun">रो</span><span class="pln"> </span><span class="lit">2</span><span class="pln">
+</span><span class="pun">|</span><span class="pln">   </span><span class="lit">1</span><span class="pln">
+</span><span class="pun">|</span><span class="pln"> </span><span class="pun">ना</span><span class="pln"> </span><span class="lit">2</span><span class="pln">
+</span><span class="pun">|</span><span class="pln"> </span><span class="pun">म</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+</span><span class="pun">|</span><span class="pln">   </span><span class="lit">1</span><span class="pln">
+</span><span class="pun">|</span><span class="pln"> </span><span class="pun">हो</span><span class="pln"> </span><span class="lit">2</span></code></pre>
+
+<p>Note how some of these "characters" (grapheme clusters) have length 
+2, and some have length 1.  This is why string indexing is problematic: 
+if I want to get grapheme cluster #69450 from a text file, then I have 
+to linearly scan through the entire file and count.  So your options 
+are:</p>
+
+<ul>
+<li>Build an index (kind of crazy...)</li>
+<li>Just realize that you can't break on every character boundary.  The 
+break iterator object is capable of going both forwards AND backwards, 
+so if you need to extract the first 140 characters of a string, then you
+ look at index 140 and iterate <em>backwards</em> to the previous grapheme cluster break, that way you don't end up with funny text.  (Better yet, you can use a <em>word break</em>
+ iterator for the appropriate locale.)  The benefit of using this level 
+of abstraction (character iterators and the like) is that it no longer 
+matters which encoding you use: you can use UTF-8, UTF-16, UTF-32 and it
+ all just works.  Well, mostly works.</li>
+</ul>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/a/6805416" title="short permalink to this answer" class="short-link" id="link-post-6805416">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/6805416/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/6805416/revisions" title="show all edits to this post">edited <span title="2011-07-24 07:45:13Z" class="relativetime">Jul 24 '11 at 7:45</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-07-24 07:02:08Z" class="relativetime">Jul 24 '11 at 7:02</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/82294/dietrich-epp"><div class="gravatar-wrapper-32"><img src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/5c5f910416e2b92bb73fa59c56fe695d.jpeg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/82294/dietrich-epp">Dietrich Epp</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 133,197" dir="ltr">133k</span><span title="24 gold badges"><span class="badge1"></span><span class="badgecount">24</span></span><span title="233 silver badges"><span class="badge2"></span><span class="badgecount">233</span></span><span title="306 bronze badges"><span class="badge3"></span><span class="badgecount">306</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6805416" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-8081835" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Is that right? You've output क् (ka + virama) and र (ra) as separate clusters, but according to the <a href="http://www.unicode.org/reports/tr29/tr29-17.html#Grapheme_Cluster_Boundaries" rel="nofollow noreferrer">Unicode Text Segmentation algorithm</a> these should form the single cluster क्र (kra).</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/68063/gareth-rees" title="47,468 reputation" class="comment-user">Gareth Rees</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment8081835_6805416"><span title="2011-07-24 10:27:00Z" class="relativetime-clean">Jul 24 '11 at 10:27</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8084421" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Gareth: I suspect that is a 
+"tailored grapheme cluster" -- which means that it will only be 
+separated in that manner in certain locales.  Since I supply the default
+ locale, no "tailoring" will be done.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/82294/dietrich-epp" title="133,197 reputation" class="comment-user">Dietrich Epp</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment8084421_6805416"><span title="2011-07-24 16:10:30Z" class="relativetime-clean">Jul 24 '11 at 16:10</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8084553" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Gareth: On further research,
+ it appears that not only are such rules not implemented by ICU, but 
+they do not appear in the Unicode locale database.  The tailored 
+grapheme cluster examples in the Unicode text segmentation algorithm 
+page appear to be non-normative, as I cannot find rules for the other 
+two examples either.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/82294/dietrich-epp" title="133,197 reputation" class="comment-user">Dietrich Epp</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment8084553_6805416"><span title="2011-07-24 16:25:48Z" class="relativetime-clean">Jul 24 '11 at 16:25</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6805416" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="30108326"></a>
+<div id="answer-30108326" class="answer" data-answerid="30108326" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="30108326" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can achieve this with a <a href="http://www.regular-expressions.info/unicode.html" rel="nofollow">simple regex</a> for any engine that supports <code>\X</code></p>
+
+<p><a href="https://regex101.com/r/eD0eZ9/1" rel="nofollow">Demo</a></p>
+
+<p>Unfortunately, Python's re <a href="http://bugs.python.org/issue12733" rel="nofollow">does not support</a> the \X grapheme match.</p>
+
+<p>Fortunately, the proposed replacement, <a href="https://pypi.python.org/pypi/regex" rel="nofollow">regex</a>, does support <code>\X</code>:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pun">&gt;&gt;&gt;</span><span class="pln"> a </span><span class="pun">=</span><span class="pln"> </span><span class="str">"बिक्रम मेरो नाम हो"</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> regex</span><span class="pun">.</span><span class="pln">findall</span><span class="pun">(</span><span class="pln">r</span><span class="str">'\X'</span><span class="pun">,</span><span class="pln"> a</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">[</span><span class="str">'बि'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'क्'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'र'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'म'</span><span class="pun">,</span><span class="pln"> </span><span class="str">' '</span><span class="pun">,</span><span class="pln"> </span><span class="str">'मे'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'रो'</span><span class="pun">,</span><span class="pln"> </span><span class="str">' '</span><span class="pun">,</span><span class="pln"> </span><span class="str">'ना'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'म'</span><span class="pun">,</span><span class="pln"> </span><span class="str">' '</span><span class="pun">,</span><span class="pln"> </span><span class="str">'हो'</span><span class="pun">]</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/a/30108326" title="short permalink to this answer" class="short-link" id="link-post-30108326">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/30108326/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-05-07 17:50:45Z" class="relativetime">May 7 '15 at 17:50</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/298607/dawg"><div class="gravatar-wrapper-32"><img src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/DVW9g.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/298607/dawg">dawg</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 47,106" dir="ltr">47.1k</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="66 silver badges"><span class="badge2"></span><span class="badgecount">66</span></span><span title="125 bronze badges"><span class="badge3"></span><span class="badgecount">125</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-30108326" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-30108326" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="6805532"></a>
+<div id="answer-6805532" class="answer" data-answerid="6805532" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="6805532" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Indic and non Latin scripts like Hangul do not generally follow the 
+idea of matching string indices to code points. It's generally a pain 
+working with Indic scripts. Most characters are two bytes with some rare
+ ones extending into three. With Dravidian, it's no defined order. See 
+the <a href="http://www.unicode.org/versions/Unicode6.0.0/ch09.pdf" rel="nofollow noreferrer">Unicode specification</a> for more details. </p>
+
+<p>That said,check <a href="https://stackoverflow.com/questions/2287962/c-how-to-read-unicode-characters-hindi-script-for-e-g-using-c-or-is-the">here</a> for some ideas about unicode and python with C++. </p>
+
+<p>Finally,as said by <a href="https://stackoverflow.com/questions/6805311/playing-aroud-with-devanagari-characters/6805416#6805416">Dietrich</a>, you might want to check out <a href="http://site.icu-project.org/" rel="nofollow noreferrer">ICU</a>
+ too. It has bindings available for C/C++ and java via icu4c and icu4j 
+respectively. There's some learning curve involved, so I suggest you set
+ aside <strike>some</strike> loads of time for it. :)</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/a/6805532" title="short permalink to this answer" class="short-link" id="link-post-6805532">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/6805532/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/6805532/revisions" title="show all edits to this post">edited <span title="2017-05-23 12:19:26Z" class="relativetime">May 23 at 12:19</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/-1/community"><div class="gravatar-wrapper-32"><img src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/a007be5a61f6aa8f3e85ae2fc18dd66e.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/-1/community">Community</a><span class="mod-flair" title="moderator">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-07-24 07:36:33Z" class="relativetime">Jul 24 '11 at 7:36</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/205936/s-r-i"><div class="gravatar-wrapper-32"><img src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/31ff00639610d344b6a5929a12f96e52.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/205936/s-r-i">S.R.I</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,651</span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="25 bronze badges"><span class="badge3"></span><span class="badgecount">25</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6805532" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6805532" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="38359513"></a>
+<div id="answer-38359513" class="answer" data-answerid="38359513" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="38359513" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There's a pure-Python library called <a href="https://pypi.python.org/pypi/uniseg" rel="nofollow"><code>uniseg</code></a> which provides a number of utilities including a grapheme cluster iterator which provides the behaviour you described:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pun">&gt;&gt;&gt;</span><span class="pln"> a </span><span class="pun">=</span><span class="pln"> u</span><span class="str">"बिक्रम मेरो नाम हो"</span><span class="pln">
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">from</span><span class="pln"> uniseg</span><span class="pun">.</span><span class="pln">graphemecluster </span><span class="kwd">import</span><span class="pln"> grapheme_clusters
+</span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> grapheme_clusters</span><span class="pun">(</span><span class="pln">a</span><span class="pun">):</span><span class="pln"> </span><span class="kwd">print</span><span class="pun">(</span><span class="pln">i</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">...</span><span class="pln"> 
+</span><span class="pun">बि</span><span class="pln">
+</span><span class="pun">क्</span><span class="pln">
+</span><span class="pun">र</span><span class="pln">
+</span><span class="pun">म</span><span class="pln">
+
+</span><span class="pun">मे</span><span class="pln">
+</span><span class="pun">रो</span><span class="pln">
+
+</span><span class="pun">ना</span><span class="pln">
+</span><span class="pun">म</span><span class="pln">
+
+</span><span class="pun">हो</span></code></pre>
+
+<p>It claims to implement the full Unicode text segmentation algorithm described in <a href="http://www.unicode.org/reports/tr29/tr29-21.html" rel="nofollow">http://www.unicode.org/reports/tr29/tr29-21.html</a>.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="https://stackoverflow.com/a/38359513" title="short permalink to this answer" class="short-link" id="link-post-38359513">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/38359513/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2016-07-13 18:47:45Z" class="relativetime">Jul 13 '16 at 18:47</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/59984/chris-adams"><div class="gravatar-wrapper-32"><img src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/f5934485a0863578733c447016505547.jpeg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/59984/chris-adams">Chris Adams</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">4,075</span><span title="20 silver badges"><span class="badge2"></span><span class="badgecount">20</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-38359513" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-69882796" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Output is not correct. 'क् र' should be 'क्र'. Looks like there is an issue with the library.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/89346/shantanoo" title="1,860 reputation" class="comment-user">shantanoo</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment69882796_38359513"><span title="2016-12-27 06:39:53Z" class="relativetime-clean">Dec 27 '16 at 6:39</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-70112312" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@shantanoo That's certainly possible – I would report that to the author: <a href="https://bitbucket.org/emptypage/uniseg-python" rel="nofollow noreferrer">bitbucket.org/emptypage/uniseg-python</a></span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/59984/chris-adams" title="4,075 reputation" class="comment-user">Chris Adams</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment70112312_38359513"><span title="2017-01-03 21:53:02Z" class="relativetime-clean">Jan 3 at 21:53</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-38359513" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+                                    <a name="new-answer"></a>
+                        <form id="post-form" action="/questions/6805311/answer/submit" method="post" class="post-form">
+                            <input id="post-id" value="6805311" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="" type="hidden">
+                            <h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;"> 
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="70822e184ebab649287220ba9c5ac80a" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div style="position: relative;">
+                                
+                                            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="https://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f6805311%2fplaying-around-with-devanagari-characters%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="required, but never shown" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        
+StackExchange.openid.initPostLogin('.new-post-login', 
+'https%3a%2f%2fstackoverflow.com%2fquestions%2f6805311%2fplaying-around-with-devanagari-characters%23new-answer',
+ 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" 
+type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" 
+size="30" maxlength="100" value="" tabindex="106" placeholder="required,
+ but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+                            </div>
+           
+                                                            <div class="form-submit cbt">
+                                    <input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+                                    <a href="#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="https://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank">privacy policy</a> and <a href="https://stackexchange.com/legal/terms-of-service" name="tos" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?                            Browse other questions tagged <a href="https://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a> <a href="https://stackoverflow.com/questions/tagged/unicode" class="post-tag" title="show questions tagged 'unicode'" rel="tag">unicode</a> <a href="https://stackoverflow.com/questions/tagged/indic" class="post-tag" title="show questions tagged 'indic'" rel="tag">indic</a>  or <a href="https://stackoverflow.com/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2011-07-24 06:26:21Z"><b>6 years, 3 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>2,528 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://stackoverflow.com/questions/6805311/playing-around-with-devanagari-characters?lastactivity" class="lastactivity-link" title="2016-07-13 18:47:45Z">1 year, 3 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+                        
+            <div id="dfp-tsb" class="everyonelovesstackoverflow" style="min-height: auto; height: auto; display: block;" data-google-query-id="CLuatMHtjdcCFQ6GaAodbogCuA" data-clc-ready="true"><div id="google_ads_iframe_/248424177/stackoverflow.com/sb/question-pages_0__container__" style="border: 0pt none; min-height: auto; height: auto; display: block;"><iframe id="google_ads_iframe_/248424177/stackoverflow.com/sb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/stackoverflow.com/sb/question-pages_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom; min-height: auto; height: auto; display: none;" srcdoc="" width="300" height="250" frameborder="0"></iframe></div></div>
+            <div id="hireme" class="blue tagged tex2jax_ignore x-rem clc-jobs-multi"><a class="top " href="https://stackoverflow.com/jobs/remote-developer-jobs" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=4wpfuTjTS-aqh-otLz9PJiaW_evmMy_TY9223dzILJvxo9_tgOOBDJIMPRsYGBrsGRkZWKSZ5rdxXP3IebVXiEmSIeXAw6AXll7n_O1nM83s5th7h7PxiSAbSNzu7XlLtUP29oxsBZUlGfl5s5lW_GffeJZz-jGIPPvrh5YMs0Lh8tJMx2ZzfP3IOaVPiAEkf-LmQUsbdQV7NVMWeWYmBi5WpgCGmawgBosbw4r_jCBGAMMxXpAIgw3Dv9_Hy-UZis1rvAE&amp;cr=10439&amp;ct=1&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2Fremote-developer-jobs%3Fmed=clc&amp;sig=DgoNYkrE0uYrEg"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46"><g fill="#FFF"><path d="M33.35 25.265H11.955c-3.036.182-5.642-2.15-5.823-5.211-.18-3.06 2.133-5.69 5.168-5.871.323-4.711 3.746-8.615 8.343-9.514 4.597-.9 9.22 1.43 11.266 5.677a7.54 7.54 0 0 1 7.96 2.15 7.694 7.694 0 0 1 1.313 8.204 7.58 7.58 0 0 1-6.887 4.565h.055z" opacity=".3"></path><path d="M39.181 18.453a7.301 7.301 0 0 0-1.245-7.784 7.148 7.148 0 0 0-7.546-2.04.392.392 0 0 1-.477-.205c-1.948-4.128-6.418-6.405-10.868-5.536-4.45.87-7.755 4.664-8.035 9.229a.393.393 0 0 1-.368.368c-2.819.169-4.968 2.611-4.8 5.456.168 2.844 2.59 5.011 5.43 4.841h21.381a7.188 7.188 0 0 0 6.528-4.33zm-.66-8.309a8.087 8.087 0 0 1 1.38 8.624 7.973 7.973 0 0 1-7.244 4.8h-21.36c-3.253.194-6.045-2.305-6.239-5.581-.186-3.16 2.113-5.892 5.194-6.256.44-4.77 3.95-8.698 8.643-9.614 4.692-.916 9.404 1.407 11.578 5.667 2.9-.81 6.019.095 8.048 2.36z"></path><path d="M18.948 5.75l.614-.151a.393.393 0 0 0-.188-.763l-.613.151a.393.393 0 0 0 .187.763zm-4.977 5.15a7.252 7.252 0 0 1 2.807-4.083.393.393 0 0 0-.456-.64 8.038 8.038 0 0 0-3.11 4.525.393.393 0 0 0 .759.198zm14.841 18.6v7.659a2.346 2.346 0 0 1-2.335 2.357h-9.695a2.346 2.346 0 0 1-2.335-2.357V29.5a.393.393 0 1 0-.785 0v7.659c0 1.735 1.396 3.143 3.12 3.143h9.695c1.724 0 3.12-1.408 3.12-3.143V29.5a.393.393 0 1 0-.785 0z"></path><path d="M16.904 29.431v-6.256a.393.393 0 1 0-.785 0v6.256a.393.393 0 1 0 .785 0zm9.419 0v-6.256a.393.393 0 1 0-.785 0v6.256a.393.393 0 1 0 .785 0zm-4.7 8.052c-.978 0-1.77-.798-1.77-1.782 0-.983.792-1.781 1.77-1.781s1.77.798 1.77 1.781c0 .984-.792 1.782-1.77 1.782zm0-.786a.99.99 0 0 0 .985-.996.99.99 0 0 0-.985-.996.99.99 0 0 0-.985.996c0 .55.441.996.985.996z"></path><path d="M11.955 29.631h19.322a.393.393 0 0 0 0-.786H11.955a.393.393 0 0 0 0 .786zm28.295 8.455h-2.073c-1.723 0-3.12 1.408-3.12 3.143v1.375a2.346 2.346 0 0 1-2.334 2.357h-8.346a2.346 2.346 0 0 1-2.335-2.357v-2.75a.393.393 0 1 0-.784 0v2.75c0 1.735 1.396 3.143 3.12 3.143h8.345c1.723 0 3.12-1.408 3.12-3.143v-1.375a2.346 2.346 0 0 1 2.334-2.357h2.073a.393.393 0 0 0 0-.786z"></path></g></svg><span>Work from anywhere</span></a><div class="middle"><ul class="jobs"><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="Front-end Engineer at Successful EdTech Startup at Homer Learning. Click to learn more." href="https://stackoverflow.com/jobs/41305/front-end-engineer-at-successful-edtech-startup-homer-learning" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=4wpfuTjTS-aqh-otLz9PJiaW_evmMy_TY9223dzILJvxo9_tgOOBDJIMPRsYGBrsGRkZWKSZ5rdxXP3IebVXiEmSIeXAw6AXll7n_O1nM83s5th7h7PxiSAbSNzu7XlLtUP29oxsBZUlGfl5s5lW_GffeJZz-jGIPPvrh5YMs0Lh8tJMx2ZzfP3IOaVPiAEkf-LmQUsbdQV7NVMWeWYmBi5WpgCGmawgBosbw4r_jCBGAMMxXpAIgw3Dv9_Hy-UZis1rvAE&amp;cr=296661&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F41305%2Ffront-end-engineer-at-successful-edtech-startup-homer-learning%3Fmed=clc&amp;sig=FCCuB24_K-ZaRw"><div class="title">Front-end Engineer at Successful EdTech Startup</div><div><span class="company">Homer Learning</span><span class="location"><svg viewBox="0 0 12 12"><path d="M6 5.7c.4 0 .7-.1.9-.4.3-.3.4-.6.4-.9 0-.4-.1-.7-.4-.9-.2-.3-.5-.4-.9-.4s-.7.1-.9.4c-.3.2-.4.5-.4.9s.1.7.4.9c.2.3.5.4.9.4zm0-5c1 0 1.9.4 2.6 1.1.7.7 1.1 1.6 1.1 2.6 0 .5-.1 1.1-.4 1.8s-.5 1.3-.9 1.9c-.4.5-.7 1.1-1.1 1.6-.4.5-.7.9-.9 1.2l-.4.4c-.1-.1-.2-.3-.4-.5s-.5-.6-.9-1.2c-.4-.5-.8-1-1.1-1.6s-.7-1.1-.9-1.8c-.3-.7-.4-1.3-.4-1.8 0-1 .4-1.9 1.1-2.6S5 .7 6 .7z"></path></svg><span>New York, NY</span></span></div><div class="opts"><span class="opt salary"><span>$90k - $130k</span></span><span class="opt remote"><svg viewBox="0 0 12 12"><path d="M6 9.8L3.9 7.7c1.3-.9 3-.9 4.2 0L6 9.8zm3-3a4.81 4.81 0 0 0-6 0L2.2 6c2.2-1.8 5.5-1.8 7.7 0l-.9.8zm1.7-1.7a7.27 7.27 0 0 0-9.4 0l-.9-.8c3.2-2.8 7.9-2.8 11.1 0l-.8.8z"></path></svg><span>Remote</span></span></div><span class="post-tag">javascript</span><span class="post-tag">html5</span><div></div></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=4wpfuTjTS-aqh-otLz9PJiaW_evmMy_TY9223dzILJvxo9_tgOOBDJIMPRsYGBrsGRkZWKSZ5rdxXP3IebVXiEmSIeXAw6AXll7n_O1nM83s5th7h7PxiSAbSNzu7XlLtUP29oxsBZUlGfl5s5lW_GffeJZz-jGIPPvrh5YMs0Lh8tJMx2ZzfP3IOaVPiAEkf-LmQUsbdQV7NVMWeWYmBi5WpgCGmawgBosbw4r_jCBGAMMxXpAIgw3Dv9_Hy-UZis1rvAE&amp;cr=296661&amp;ct=-1&amp;sig=MgpxOmcU6hArKw" data-clc-meta-target="-1"><svg viewBox="0 0 13.6 13.6"><path d="M11.4 2.3C8.9-.2 4.8-.2 2.3 2.3s-2.5 6.6 0 9.1 6.6 2.5 9.1 0 2.5-6.6 0-9.1zM8.6 9.5L6.8 7.7 5 9.5l-.9-.9 1.8-1.8L4.1 5l.9-.9 1.8 1.8 1.8-1.8.9.9-1.8 1.8 1.8 1.8-.9.9z"></path></svg><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="Open Source Developer (Open edX) - Python/Django, Javascript at OpenCraft. Click to learn more." href="https://stackoverflow.com/jobs/155827/open-source-developer-open-edx-python-django-opencraft" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=4wpfuTjTS-aqh-otLz9PJiaW_evmMy_TY9223dzILJvxo9_tgOOBDJIMPRsYGBrsGRkZWKSZ5rdxXP3IebVXiEmSIeXAw6AXll7n_O1nM83s5th7h7PxiSAbSNzu7XlLtUP29oxsBZUlGfl5s5lW_GffeJZz-jGIPPvrh5YMs0Lh8tJMx2ZzfP3IOaVPiAEkf-LmQUsbdQV7NVMWeWYmBi5WpgCGmawgBosbw4r_jCBGAMMxXpAIgw3Dv9_Hy-UZis1rvAE&amp;cr=291329&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F155827%2Fopen-source-developer-open-edx-python-django-opencraft%3Fmed=clc&amp;sig=dzKVz1l7eE7n0Q"><div class="title">Open Source Developer (Open edX) - Python/Django, Javascript</div><div><span class="company">OpenCraft</span><span class="location"><svg viewBox="0 0 12 12"><path d="M6 5.7c.4 0 .7-.1.9-.4.3-.3.4-.6.4-.9 0-.4-.1-.7-.4-.9-.2-.3-.5-.4-.9-.4s-.7.1-.9.4c-.3.2-.4.5-.4.9s.1.7.4.9c.2.3.5.4.9.4zm0-5c1 0 1.9.4 2.6 1.1.7.7 1.1 1.6 1.1 2.6 0 .5-.1 1.1-.4 1.8s-.5 1.3-.9 1.9c-.4.5-.7 1.1-1.1 1.6-.4.5-.7.9-.9 1.2l-.4.4c-.1-.1-.2-.3-.4-.5s-.5-.6-.9-1.2c-.4-.5-.8-1-1.1-1.6s-.7-1.1-.9-1.8c-.3-.7-.4-1.3-.4-1.8 0-1 .4-1.9 1.1-2.6S5 .7 6 .7z"></path></svg><span>No office location</span></span></div><div class="opts"><span class="opt remote"><svg viewBox="0 0 12 12"><path d="M6 9.8L3.9 7.7c1.3-.9 3-.9 4.2 0L6 9.8zm3-3a4.81 4.81 0 0 0-6 0L2.2 6c2.2-1.8 5.5-1.8 7.7 0l-.9.8zm1.7-1.7a7.27 7.27 0 0 0-9.4 0l-.9-.8c3.2-2.8 7.9-2.8 11.1 0l-.8.8z"></path></svg><span>Remote</span></span></div><span class="post-tag highlight">python</span><span class="post-tag">project-management</span><div></div></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=4wpfuTjTS-aqh-otLz9PJiaW_evmMy_TY9223dzILJvxo9_tgOOBDJIMPRsYGBrsGRkZWKSZ5rdxXP3IebVXiEmSIeXAw6AXll7n_O1nM83s5th7h7PxiSAbSNzu7XlLtUP29oxsBZUlGfl5s5lW_GffeJZz-jGIPPvrh5YMs0Lh8tJMx2ZzfP3IOaVPiAEkf-LmQUsbdQV7NVMWeWYmBi5WpgCGmawgBosbw4r_jCBGAMMxXpAIgw3Dv9_Hy-UZis1rvAE&amp;cr=291329&amp;ct=-1&amp;sig=FHKasvwT4rj4mw" data-clc-meta-target="-1"><svg viewBox="0 0 13.6 13.6"><path d="M11.4 2.3C8.9-.2 4.8-.2 2.3 2.3s-2.5 6.6 0 9.1 6.6 2.5 9.1 0 2.5-6.6 0-9.1zM8.6 9.5L6.8 7.7 5 9.5l-.9-.9 1.8-1.8L4.1 5l.9-.9 1.8 1.8 1.8-1.8.9.9-1.8 1.8 1.8 1.8-.9.9z"></path></svg><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="Excellence in Web Application Development (Senior Frontend Engineer) at Sherpany. Click to learn more." href="https://stackoverflow.com/jobs/154193/excellence-in-web-application-development-senior-sherpany" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=4wpfuTjTS-aqh-otLz9PJiaW_evmMy_TY9223dzILJvxo9_tgOOBDJIMPRsYGBrsGRkZWKSZ5rdxXP3IebVXiEmSIeXAw6AXll7n_O1nM83s5th7h7PxiSAbSNzu7XlLtUP29oxsBZUlGfl5s5lW_GffeJZz-jGIPPvrh5YMs0Lh8tJMx2ZzfP3IOaVPiAEkf-LmQUsbdQV7NVMWeWYmBi5WpgCGmawgBosbw4r_jCBGAMMxXpAIgw3Dv9_Hy-UZis1rvAE&amp;cr=287511&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F154193%2Fexcellence-in-web-application-development-senior-sherpany%3Fmed=clc&amp;sig=CJN-x68dDzhqCA"><div class="title">Excellence in Web Application Development (Senior Frontend Engineer)</div><div><span class="company">Sherpany</span><span class="location"><svg viewBox="0 0 12 12"><path d="M6 5.7c.4 0 .7-.1.9-.4.3-.3.4-.6.4-.9 0-.4-.1-.7-.4-.9-.2-.3-.5-.4-.9-.4s-.7.1-.9.4c-.3.2-.4.5-.4.9s.1.7.4.9c.2.3.5.4.9.4zm0-5c1 0 1.9.4 2.6 1.1.7.7 1.1 1.6 1.1 2.6 0 .5-.1 1.1-.4 1.8s-.5 1.3-.9 1.9c-.4.5-.7 1.1-1.1 1.6-.4.5-.7.9-.9 1.2l-.4.4c-.1-.1-.2-.3-.4-.5s-.5-.6-.9-1.2c-.4-.5-.8-1-1.1-1.6s-.7-1.1-.9-1.8c-.3-.7-.4-1.3-.4-1.8 0-1 .4-1.9 1.1-2.6S5 .7 6 .7z"></path></svg><span>No office location</span></span></div><div class="opts"><span class="opt remote"><svg viewBox="0 0 12 12"><path d="M6 9.8L3.9 7.7c1.3-.9 3-.9 4.2 0L6 9.8zm3-3a4.81 4.81 0 0 0-6 0L2.2 6c2.2-1.8 5.5-1.8 7.7 0l-.9.8zm1.7-1.7a7.27 7.27 0 0 0-9.4 0l-.9-.8c3.2-2.8 7.9-2.8 11.1 0l-.8.8z"></path></svg><span>Remote</span></span></div><span class="post-tag highlight">python</span><span class="post-tag">css3</span><div></div></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=4wpfuTjTS-aqh-otLz9PJiaW_evmMy_TY9223dzILJvxo9_tgOOBDJIMPRsYGBrsGRkZWKSZ5rdxXP3IebVXiEmSIeXAw6AXll7n_O1nM83s5th7h7PxiSAbSNzu7XlLtUP29oxsBZUlGfl5s5lW_GffeJZz-jGIPPvrh5YMs0Lh8tJMx2ZzfP3IOaVPiAEkf-LmQUsbdQV7NVMWeWYmBi5WpgCGmawgBosbw4r_jCBGAMMxXpAIgw3Dv9_Hy-UZis1rvAE&amp;cr=287511&amp;ct=-1&amp;sig=bxVr6k6WlgmH6w" data-clc-meta-target="-1"><svg viewBox="0 0 13.6 13.6"><path d="M11.4 2.3C8.9-.2 4.8-.2 2.3 2.3s-2.5 6.6 0 9.1 6.6 2.5 9.1 0 2.5-6.6 0-9.1zM8.6 9.5L6.8 7.7 5 9.5l-.9-.9 1.8-1.8L4.1 5l.9-.9 1.8 1.8 1.8-1.8.9.9-1.8 1.8 1.8 1.8-.9.9z"></path></svg><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="React.js Front-end Developer at Emgage. Click to learn more." href="https://stackoverflow.com/jobs/158507/reactjs-front-end-developer-emgage" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=4wpfuTjTS-aqh-otLz9PJiaW_evmMy_TY9223dzILJvxo9_tgOOBDJIMPRsYGBrsGRkZWKSZ5rdxXP3IebVXiEmSIeXAw6AXll7n_O1nM83s5th7h7PxiSAbSNzu7XlLtUP29oxsBZUlGfl5s5lW_GffeJZz-jGIPPvrh5YMs0Lh8tJMx2ZzfP3IOaVPiAEkf-LmQUsbdQV7NVMWeWYmBi5WpgCGmawgBosbw4r_jCBGAMMxXpAIgw3Dv9_Hy-UZis1rvAE&amp;cr=296724&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F158507%2Freactjs-front-end-developer-emgage%3Fmed=clc&amp;sig=qJaxzCNb6TNcnw"><div class="title">React.js Front-end Developer</div><div><span class="company">Emgage</span><span class="location"><svg viewBox="0 0 12 12"><path d="M6 5.7c.4 0 .7-.1.9-.4.3-.3.4-.6.4-.9 0-.4-.1-.7-.4-.9-.2-.3-.5-.4-.9-.4s-.7.1-.9.4c-.3.2-.4.5-.4.9s.1.7.4.9c.2.3.5.4.9.4zm0-5c1 0 1.9.4 2.6 1.1.7.7 1.1 1.6 1.1 2.6 0 .5-.1 1.1-.4 1.8s-.5 1.3-.9 1.9c-.4.5-.7 1.1-1.1 1.6-.4.5-.7.9-.9 1.2l-.4.4c-.1-.1-.2-.3-.4-.5s-.5-.6-.9-1.2c-.4-.5-.8-1-1.1-1.6s-.7-1.1-.9-1.8c-.3-.7-.4-1.3-.4-1.8 0-1 .4-1.9 1.1-2.6S5 .7 6 .7z"></path></svg><span>Pasadena, CA</span></span></div><div class="opts"><span class="opt salary"><span>$60k - $125k</span></span><span class="opt remote"><svg viewBox="0 0 12 12"><path d="M6 9.8L3.9 7.7c1.3-.9 3-.9 4.2 0L6 9.8zm3-3a4.81 4.81 0 0 0-6 0L2.2 6c2.2-1.8 5.5-1.8 7.7 0l-.9.8zm1.7-1.7a7.27 7.27 0 0 0-9.4 0l-.9-.8c3.2-2.8 7.9-2.8 11.1 0l-.8.8z"></path></svg><span>Remote</span></span></div><span class="post-tag">javascript</span><span class="post-tag">reactjs</span><div></div></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=4wpfuTjTS-aqh-otLz9PJiaW_evmMy_TY9223dzILJvxo9_tgOOBDJIMPRsYGBrsGRkZWKSZ5rdxXP3IebVXiEmSIeXAw6AXll7n_O1nM83s5th7h7PxiSAbSNzu7XlLtUP29oxsBZUlGfl5s5lW_GffeJZz-jGIPPvrh5YMs0Lh8tJMx2ZzfP3IOaVPiAEkf-LmQUsbdQV7NVMWeWYmBi5WpgCGmawgBosbw4r_jCBGAMMxXpAIgw3Dv9_Hy-UZis1rvAE&amp;cr=296724&amp;ct=-1&amp;sig=BrFYrNLPOwOxZg" data-clc-meta-target="-1"><svg viewBox="0 0 13.6 13.6"><path d="M11.4 2.3C8.9-.2 4.8-.2 2.3 2.3s-2.5 6.6 0 9.1 6.6 2.5 9.1 0 2.5-6.6 0-9.1zM8.6 9.5L6.8 7.7 5 9.5l-.9-.9 1.8-1.8L4.1 5l.9-.9 1.8 1.8 1.8-1.8.9.9-1.8 1.8 1.8 1.8-.9.9z"></path></svg><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="x-rem-footer"><p>Work remotely - from home or wherever you choose.</p><a class="x-rem-cta" href="https://stackoverflow.com/jobs/remote-developer-jobs" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=4wpfuTjTS-aqh-otLz9PJiaW_evmMy_TY9223dzILJvxo9_tgOOBDJIMPRsYGBrsGRkZWKSZ5rdxXP3IebVXiEmSIeXAw6AXll7n_O1nM83s5th7h7PxiSAbSNzu7XlLtUP29oxsBZUlGfl5s5lW_GffeJZz-jGIPPvrh5YMs0Lh8tJMx2ZzfP3IOaVPiAEkf-LmQUsbdQV7NVMWeWYmBi5WpgCGmawgBosbw4r_jCBGAMMxXpAIgw3Dv9_Hy-UZis1rvAE&amp;cr=10439&amp;ct=2&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2Fremote-developer-jobs%3Fmed=clc&amp;sig=I_fQgXu0trOP0Q">Browse remote jobs</a></li></ul></div><img src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/impression.gif" class="impression" style="display: none;"></div>
+                <script>var clc={options:{svc:'dfp'}};</script>
+<script>;window.clc=window.clc||{},window.clc.init=window.clc.init||function(a){var
+ 
+b=window,c=b.document;try{if("function"!=typeof[].indexOf||!window.addEventListener||!a.allowed)return;var
+ d=new 
+RegExp(a.allowed);if(!d.test(location.hostname))return;if(b.clc.options)for(var
+ e in b.clc.options)a[e]=b.clc.options[e];b.clc.cmd="undefined"==typeof 
+b.clc.cmd?[]:b.clc.cmd,b.clc.autoload=b.clc.autoload||function(){"function"==typeof
+ b.clc.load?b.clc.load():b.clc.cmd.push(function(a){a.load()})};var 
+f=a.wv;if(c.hidden&&f)return void 
+c.addEventListener("visibilitychange",function 
+b(){c.hidden||(window.clc.init(a),c.removeEventListener("visibilitychange",b))});b.clc.options=a,a.al&&b.clc.autoload();var
+ 
+g=c.createElement("script");g.async=!0,g.src=a.lib,c.body.appendChild(g)}catch(a){}},window.clc.loadDisplayAds=window.clc.loadDisplayAds||function(){function
+ 
+a(b){b.style.height=b.style.maxHeight=b.style.minHeight="auto",b.style.display="IFRAME"===b.tagName?"none":"block",[].forEach.call(b.children,a)}function
+ b(a){new Image().src="https://"+e+"/stalled.gif?"+a}var 
+c=window,d=c.document,e="clc.stackoverflow.com",f={slots:{lb:[[728,90]],mlb:[[728,90]],sb:[[300,250],[300,600]],"tag-sponsorship":[[730,135]]},ids:{"dfp-tlb":"lb","dfp-mlb":"mlb","dfp-tsb":"sb","dfp-tag":"tag-sponsorship","clc-tlb":"lb","clc-mlb":"mlb","clc-tsb":"sb"}},g=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?"tag-pages":"question-pages",h=location.hostname;/^clc\./.test(location.hostname)&&(h="test/dev.stackoverflow.com");return
+ function(e){var 
+i=(e&&0<e.length?e:Object.keys(f.ids)).map(function(a){return 
+d.getElementById(a)}).filter(function(a){return!!a&&/^\s*$/.test(a.innerHTML)}).map(function(a){return
+ 
+a.id});if(0!==i.length){c.googletag=c.googletag||{},c.googletag.cmd=c.googletag.cmd||[],c.googletag.cmd.push(function(){var
+ 
+e=c.googletag,j=d.createElement("div");j.className="adsbox",j.id="clc-abd",j.style.position="absolute",j.style.pointerEvents="none",j.innerHTML="&nbsp;",d.body.appendChild(j);var
+ 
+k=e.pubads();k.enableSingleRequest(),k.addEventListener("slotRenderEnded",function(c){var
+ e=c.serviceName,f=c.slot,g=c.lineItemId;try{var 
+h=f.getSlotElementId(),i=[];h||i.push("id=0");var 
+j=d.getElementById(h);if(!h||j?j.hasAttribute("data-clc-stalled")&&i.push("st=1"):i.push("el=0"),0!==i.length)return
+ void 
+b(i.join("&"));-1===[4385506061,4386578282,4386579572].indexOf(g)?j.setAttribute("data-clc-prefilled","true"):a(j),j.setAttribute("data-clc-ready","true")}catch(a){var
+ 
+k=d.getElementById("dfp-tsb")||d.getElementById("clc-tsb");k&&k.setAttribute("data-clc-ready","true"),b("e=1")}});var
+ 
+l=c.dfp_targeting||{};l&&Object.keys(l).forEach(function(a){k.setTargeting(a,l[a])});for(var
+ m=0,n=i;m<n.length;m++){var 
+o=n[m],p=f.ids[o],q=f.slots[p],r="/"+"248424177"+"/"+h+"/"+p+"/"+g,s=e.defineSlot(r,q,o);("tag-sponsorship"===p||"sb"==p)&&s.setCollapseEmptyDiv(!0,!0),s.addService(k),!1}e.enableServices();for(var
+ o,t=0,u=i;t<u.length;t++)o=u[t],e.display(o)});var 
+j=d.createElement("script");j.async=!0,j.src="https://www.googletagservices.com/tag/js/gpt.js",document.body.appendChild(j)}}}(),window.clc.init.call(null,
+ 
+{"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=96bc0285e9e9","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=57bdc97fbf9e","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false});</script>            <script>
+window.clc_request='ArqnCGhKHNUIAAAAAD_XZwACAAAAAgAAAAA6AAAAfHB5dGhvbnx1bmljb2RlfGluZGljfHgtY3Jvc3Mtc2l0ZS11bml4LnN0YWNrZXhjaGFuZ2UuY29tfABrG8LnGO9H1Rfc';
+                    clc.autoload();
+                var 
+dfp_targeting={Registered:['false'],'so-tag':['python','unicode','indic'],'X-Site':['unix.stackexchange.com']};
+                                    clc.loadDisplayAds();
+            </script>
+            <div class="module" id="chat-feature">
+
+    <h4><a href="http://chat.stackoverflow.com/" id="h-chat-link" title="91 users active in 55 rooms the last 60 minutes">91 People Chatting</a></h4>
+    <div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="PHP"><a href="http://chat.stackoverflow.com/rooms/11">PHP</a></span></h3><span title="2017-10-26 08:06:41Z" class="ad502-last-message">13 mins ago - <a href="http://chat.stackoverflow.com/users/4781925">JayIsTooCommon</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/4781925"><img title="JayIsTooCommon: 13 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/Njeyb.jpg" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/5764893"><img title="Jeeves: 21 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/qxJeL.jpg" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/208809"><img title="Gordon: 21 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/LXDBV.png" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/727208"><img title="tereško: 21 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/d2bba3700fd3a3e8cc12888edd980525.jpeg" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/981767"><img title="MGE: 25 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/picture.jpeg" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/291626"><img title="pmmaga: 28 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/yaUJS.jpg" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/4332216"><img title="ToukaXKaneki: 29 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/IK0OJ.jpg" width="23" height="23"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="SO Close Vote Reviewers"><a href="http://chat.stackoverflow.com/rooms/41570">SO Close Vote Reviewers</a></span></h3><span title="2017-10-26 08:05:16Z" class="ad502-last-message">15 mins ago - <a href="http://chat.stackoverflow.com/users/3735529">SmokeDetector</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/3735529"><img title="SmokeDetector: 15 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/m9xyh.jpg" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/6378815"><img title="Tetsuya Yamamoto: 34 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/810b57a09174a18f7b91655115ce11a5.png" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/6373379"><img title="FireAlarm: 52 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/YQ7SJ.jpg" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/4826457"><img title="Suraj Rao: 56 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/Z6OCv.png" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/993547"><img title="Patrick Hofman: 57 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/aOivq.jpg" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/578411"><img title="rene: 58 mins ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/qj33e.png" width="23" height="23"></a><a href="http://chat.stackoverflow.com/users/3082296"><img title="adiga: 1 hour ago" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/EmdM0.jpg" width="23" height="23"></a></div></div></div>
+    <script>
+    // <!--
+        StackExchange.ready(
+        function () {
+            var options = {
+                chatUrl: 'http://chat.stackoverflow.com',
+                reloadUrl: '/api/recent-chat',
+                preloadData: 
+{"activeUsers":91,"activeRooms":55,"rooms":[{"name":"PHP","id":11,"lastPost":1509005201,"posts":2901986,"users":[{"name":"JayIsTooCommon","id":4781925,"emailhash":"!https://i.stack.imgur.com/Njeyb.jpg?s=128\u0026g=1","lastPost":1509005202},{"name":"Jeeves","id":5764893,"emailhash":"!https://i.stack.imgur.com/qxJeL.jpg?s=128\u0026g=1","lastPost":1509004738},{"name":"Gordon","id":208809,"emailhash":"!https://i.stack.imgur.com/LXDBV.png?s=128\u0026g=1","lastPost":1509004736},{"name":"tereško","id":727208,"emailhash":"d2bba3700fd3a3e8cc12888edd980525","lastPost":1509004729},{"name":"MGE","id":981767,"emailhash":"!https://graph.facebook.com/539080634/picture?type=large","lastPost":1509004467},{"name":"pmmaga","id":291626,"emailhash":"!https://i.stack.imgur.com/yaUJS.jpg?s=128\u0026g=1","lastPost":1509004310},{"name":"ToukaXKaneki","id":4332216,"emailhash":"!https://i.stack.imgur.com/IK0OJ.jpg?s=128\u0026g=1","lastPost":1509004275}],"messages":[{"date":1509005201,"user":"JayIsTooCommon","userid":4781925}],"singleImage":false,"tags":["friday","php"]},{"name":"SO
+ Close Vote 
+Reviewers","id":41570,"lastPost":1509005116,"posts":774949,"users":[{"name":"SmokeDetector","id":3735529,"emailhash":"!https://i.stack.imgur.com/m9xyh.jpg?s=128\u0026g=1","lastPost":1509005116},{"name":"Tetsuya
+ 
+Yamamoto","id":6378815,"emailhash":"810b57a09174a18f7b91655115ce11a5","lastPost":1509003979},{"name":"FireAlarm","id":6373379,"emailhash":"!https://i.stack.imgur.com/YQ7SJ.jpg?s=128\u0026g=1","lastPost":1509002875},{"name":"Suraj
+ 
+Rao","id":4826457,"emailhash":"!https://i.stack.imgur.com/Z6OCv.png?s=128\u0026g=1","lastPost":1509002643},{"name":"Patrick
+ 
+Hofman","id":993547,"emailhash":"!https://i.stack.imgur.com/aOivq.jpg?s=128\u0026g=1","lastPost":1509002583},{"name":"rene","id":578411,"emailhash":"!https://i.stack.imgur.com/qj33e.png?s=128\u0026g=1","lastPost":1509002536},{"name":"adiga","id":3082296,"emailhash":"!https://i.stack.imgur.com/EmdM0.jpg?s=128\u0026g=1","lastPost":1509001828}],"messages":[{"date":1509005116,"user":"SmokeDetector","userid":3735529}],"singleImage":false,"tags":["discussion","moderation","review"]}]}
+ 
+            };
+
+            StackExchange.chatAd.init(options);
+        });
+    // -->
+    </script>
+
+</div>
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/2287962?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">7</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/2287962/c-how-to-read-unicode-characters-hindi-script-for-e-g-using-c-or-is-th?noredirect=1&amp;lq=1" class="question-hyperlink">C++
+ - How to read Unicode characters( Hindi Script for e.g. ) using C++ or 
+is there a better Way through some other programming language?</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/9097572?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">12</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/9097572/whats-the-correct-algorithm-to-determine-number-of-user-perceived-characters?noredirect=1&amp;lq=1" class="question-hyperlink">What's the correct algorithm to determine number of user-perceived-characters?</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/44025555?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/44025555/separating-vowels-and-consonants-in-indic-abugida-scripts-using-python?noredirect=1&amp;lq=1" class="question-hyperlink">Separating vowels and consonants in indic/abugida scripts using python</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/41079958?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/41079958/join-devanagari-words-incorrectly-extracted-from-pdfminer?noredirect=1&amp;lq=1" class="question-hyperlink">join devanagari words incorrectly extracted from pdfminer</a>
+</div>			</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/891643?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">597</div></a><a href="https://stackoverflow.com/questions/891643/twitter-image-encoding-challenge?rq=1" class="question-hyperlink">Twitter image encoding challenge</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/1342000?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">85</div></a><a href="https://stackoverflow.com/questions/1342000/how-to-make-the-python-interpreter-correctly-handle-non-ascii-characters-in-stri?rq=1" class="question-hyperlink">How to make the python interpreter correctly handle non-ASCII characters in string operations?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/8879243?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://stackoverflow.com/questions/8879243/image-magick-complex-character-in-kannada-indic-language-not-being-rendered?rq=1" class="question-hyperlink">Image Magick - complex character in Kannada (indic language) not being rendered properly</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/9942594?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">731</div></a><a href="https://stackoverflow.com/questions/9942594/unicodeencodeerror-ascii-codec-cant-encode-character-u-xa0-in-position-20?rq=1" class="question-hyperlink">UnicodeEncodeError: 'ascii' codec can't encode character u'\xa0' in position 20: ordinal not in range(128)</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/17039739?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://stackoverflow.com/questions/17039739/how-to-filter-out-unicode-characters-in-python?rq=1" class="question-hyperlink">How to filter out unicode characters in Python?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/30727515?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1167</div></a><a href="https://stackoverflow.com/questions/30727515/why-is-executing-java-code-in-comments-with-certain-unicode-characters-allowed?rq=1" class="question-hyperlink">Why is executing Java code in comments with certain Unicode characters allowed?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/31011395?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">15</div></a><a href="https://stackoverflow.com/questions/31011395/python-print-unicode-character?rq=1" class="question-hyperlink">Python print Unicode character</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/43618487?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">432</div></a><a href="https://stackoverflow.com/questions/43618487/why-are-emoji-characters-like-treated-so-strangely-in-swift-strings?rq=1" class="question-hyperlink">Why are emoji characters like 👩‍👩‍👧‍👦 treated so strangely in Swift strings?</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/44254171?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">12</div></a><a href="https://stackoverflow.com/questions/44254171/devanagari-text-rendering-improperly-in-pygame?rq=1" class="question-hyperlink">Devanagari text rendering improperly in PyGame</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/44554126?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://stackoverflow.com/questions/44554126/converting-unicode-code-point-numbers-to-unicode-characters?rq=1" class="question-hyperlink">converting Unicode code point numbers to Unicode characters</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/104349/what-is-this-black-patch-on-the-ocean-floor-featured-on-google-maps" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is this black patch on the ocean floor featured on Google Maps?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/398070/align-centered-math-blocks" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Align centered math-blocks
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/101377/how-can-i-inform-my-boss-that-i-may-have-been-hired-by-mistake" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I inform my boss that I may have been hired by mistake?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/146303/output-the-source-one-bit-at-a-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Output the Source, One Bit at a Time
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="https://stats.stackexchange.com/questions/309719/white-noise-in-statistics" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    White Noise in Statistics
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/97892/how-to-establish-ties-with-the-industry-as-a-young-engineering-professor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to establish ties with the industry as a young engineering professor?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="https://politics.stackexchange.com/questions/25680/how-many-federal-officials-have-been-impeached-and-convicted" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How many Federal officials have been impeached and convicted?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2490034/circular-pizza-sharing" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Circular pizza sharing
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/397992/blank-space-with-left-and-right" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Blank space with \left[ and \right]
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="https://politics.stackexchange.com/questions/25691/what-did-reagan-mean-when-he-said-the-nine-most-terrifying-words-in-the-english" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What did Reagan mean when he said: The nine most 
+terrifying words in the English language are "I'm from the government, 
+and I'm here to help."?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/81859/kids-find-pirate-treasure-map" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Kids find pirate treasure map
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/415723/word-for-something-i-should-have-said" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Word for something I should have said
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/415585/does-this-addition-technique-have-a-name" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does this addition technique have a name?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="https://unix.stackexchange.com/questions/400447/whats-a-good-mnemonic-for-shell-double-vs-single-quotes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's a good mnemonic for shell double vs. single quotes?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/101362/communicating-effectively-with-a-former-director-who-is-now-a-member-of-my-team" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Communicating effectively with a former director who is now a member of my team
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/97928/being-ostracized-in-research-group" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Being Ostracized in Research Group
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="https://history.stackexchange.com/questions/41223/when-did-official-documentation-stop-referring-to-black-people-as-negros-in-the" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When did official documentation stop referring to black people as Negros in the States?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="https://ux.stackexchange.com/questions/112957/why-does-google-still-use-paging-instead-of-progressive-loading" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does Google still use paging instead of progressive loading?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="https://aviation.stackexchange.com/questions/45072/why-do-control-towers-have-tilted-glass-panels" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do control towers have tilted glass panels?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/172630/how-did-harry-ron-and-hermione-buy-presents-for-each-other" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How did Harry, Ron and Hermione buy presents for each other?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="https://stackoverflow.com/questions/46929622/how-to-explain-the-int-function-to-a-beginner" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to explain the int() function to a beginner
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="https://mathoverflow.net/questions/284230/what-does-it-mean-to-suspect-that-two-conjectures-are-logically-equivalent" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does it mean to suspect that two conjectures are logically equivalent?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="https://mathoverflow.net/questions/284398/optimality-of-the-pl%c3%bcnnecke-ruzsa-inequality" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Optimality of the Plünnecke-Ruzsa Inequality
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/95972/could-a-sedentary-organism-develop-intelligence-or-even-sentience" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Could a sedentary organism develop intelligence, or even sentience?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+        </div>
+    <div id="feed-link">
+    <div id="feed-link-text">
+        <a href="https://stackoverflow.com/feeds/question/6805311" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>    </div>
+<script>
+StackExchange.ready(function(){$.get('/posts/6805311/ivc/8d06');});
+</script>
+<noscript>
+    <div><img src="/posts/6805311/ivc/8d06" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-py</div></div>
+
+
+        </div>
+    </div><script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/clc.js"></script><script async="" src="python%20-%20Playing%20around%20with%20Devanagari%20characters%20-%20Stack%20Overflow_files/gpt.js"></script>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row">
+                    <div class="-logo">
+
+                        <a href="https://stackoverflow.com/"><svg aria-hidden="true" class="svg-icon native iconLogo" width="150" height="30" viewBox="0 0 150 30"><g><path d="M33.9 18.6l-1.7-.2c-1.3-.1-1.9-.6-1.9-1.6 0-1.1.8-1.8 2.4-1.8 1.1 0 2.1.3 2.8.8l1-1c-1-.8-2.3-1.1-3.8-1.1-2.3 0-3.9 1.2-3.9 3.1 0 1.8 1.1 2.7 3.2 2.9l1.8.2c1.2.1 1.8.6 1.8 1.6 0 1.3-1.1 1.9-2.8 1.9-1.3 0-2.5-.3-3.3-1.2l-1 1c1.2 1.1 2.6 1.5 4.4 1.5 2.6 0 4.3-1.2 4.3-3.2-.2-2-1.5-2.7-3.3-2.9zm13.3-4.8c-1.7 0-2.8.3-3.7 1.5l1 1c.6-.9 1.3-1.2 2.7-1.2 1.9 0 2.7.8 2.7 2.3v1h-3.2c-2.4 0-3.7 1.2-3.7 3.1 0 .8.3 1.6.8 2.2.7.7 1.5 1 3 1 1.4 0 2.2-.3 3.1-1.1v1h1.6v-7.2c-.1-2.4-1.5-3.6-4.3-3.6zm2.7 7c0 .9-.2 1.5-.5 1.8-.7.6-1.5.7-2.4.7-1.7 0-2.4-.6-2.4-1.8 0-1.2.8-1.9 2.4-1.9h3l-.1 1.2zm7.6-5.6c1 0 1.6.3 2.4 1.2l1-1c-1.1-1.2-2-1.6-3.5-1.6-2.7 0-4.7 1.8-4.7 5.5 0 3.6 2 5.5 4.7 5.5 1.5 0 2.4-.4 3.5-1.6l-1.1-1c-.8.9-1.4 1.2-2.4 1.2s-1.9-.4-2.5-1.2c-.5-.7-.7-1.5-.7-2.9 0-1.3.2-2.2.7-2.9.7-.8 1.6-1.2 2.6-1.2zm13.4-1.3H69l-4.8 4.7V9.1h-1.6v15.4h1.6v-3.9l1.9-1.9 3.6 5.8h1.9l-4.4-6.9 3.7-3.7zm7.3-.33c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.7-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7.1 1.2 0 2.2-.6 2.7zm10.8-8.2l-2.2 6.9-2.3-6.9h-2.9l4.1 11.1h2.2l4.1-11.1h-3zm7.6-.1c-2.9 0-4.8 2-4.8 5.7 0 4.5 2.5 5.7 5.1 5.7 2 0 3.1-.6 4.2-1.7l-1.7-1.6c-.7.7-1.3 1-2.5 1-1.6 0-2.4-1-2.4-2.5h6.9v-1.2c0-3.2-1.7-5.4-4.8-5.4zm-2.1 4.6c0-.5.1-.8.3-1.2.3-.7.9-1.2 1.9-1.2.9 0 1.6.5 1.9 1.2.2.4.2.7.3 1.2h-4.4zm11-3.4v-1.1h-2.7v11.1h2.8v-6.7c0-1.4.9-2 1.8-2 .7 0 1 .2 1.5.7l2.1-2.1c-.8-.8-1.5-1-2.6-1-1.3-.1-2.3.4-2.9 1.1zm6.3-2.3v12.3h2.8v-8.8h2v-2.1h-2v-1.2c0-.6.3-1 1-1h1.1v-2.3h-1.6c-2.3 0-3.3 1.6-3.3 3.1zm16.2 1.1c-1.6 0-2.7.6-3.4 1.4-1 1-1.3 2.3-1.3 4.3s.3 3.3 1.3 4.3c.7.7 1.8 1.4 3.4 1.4 1.6 0 2.8-.6 3.4-1.4 1-1 1.3-2.3 1.3-4.3s-.3-3.3-1.3-4.3c-.6-.8-1.8-1.4-3.4-1.4zm1.3 8.3c-.3.3-.7.5-1.3.5-.6 0-1-.2-1.3-.5-.6-.6-.6-1.6-.6-2.7 0-1.2.1-2.1.6-2.7.3-.3.7-.5 1.3-.5.6 0 1 .2 1.3.5.6.6.6 1.5.6 2.7 0 1.2 0 2.2-.6 2.7zm16.5-8.2l-1.8 6.9-2.3-6.9h-2l-2.3 6.9-1.8-6.9H134l3.4 11.1h2.3l2.3-7 2.3 7h2.3l3.4-11.1h-2.9zm-25.1 7.7V9.27h-2.8v12.3c0 1.6 1 3.2 3.2 3.2h1.6v-2.3h-1c-.7 0-1-.4-1-1.1zM41.3 15.6l1.4-1.4h-3v-3.5h-1.6v11.1c0 1.6.9 2.9 2.7 2.9h1.1v-1.3h-.8c-1 0-1.5-.6-1.5-1.6v-6.1h1.7v-.1z" fill="#222426"></path><path fill="#BCBBBB" d="M21 27v-8h3v11H0V19h3v8z"></path><path d="M5.4 19.1l13.56 1.96.17-2.38-13.26-2.55-.47 2.97zm1.8-6.8l12 5.6 1.1-2.4-12-5.6-1.1 2.4zm3.4-5.9l10.2 8.5 1.7-2-10.2-8.5-1.7 2zM17.1.2L15 1.8l7.9 10.6 2.1-1.6L17.1.2zM5 25h14v-3H5v3z" fill="#F48024"></path></g></svg></a>
+                    </div>
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com/" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                     <li class="-item"><a href="https://stackoverflow.com/jobs/salary" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 28})">Salary Calculator</a></li>
+                                                            <li class="-item"><a href="https://stackoverflow.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-business-category" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow<br> Business</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-talent" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertise?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-advertise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Ads</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/enterprise?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-enterprise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">Enterprise</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/insights?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-insights" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 23 })">Insights</a></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="#" class="-back-trigger js-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (26)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (16)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </nav>
+                <div class="-copyright g-row jc-end">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                        </ul>
+
+                        <div>
+                            <p>
+                                site design / logo © 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link">cc by-sa 3.0</a>
+                                with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link">attribution required</a>.
+                                <span id="svnrev">rev 2017.10.26.27573</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+        <script> setTimeout(function() { $("#adzerk-user-match").remove(); }, 2000);</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || 
+function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new
+ Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = 
+g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 
+'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-1');
+                ga('create', 'UA-5620270-59', {name: 'pageData', 
+sampleRate: 5 });
+                ga('set', 'dimension2', '|python|unicode|indic|');
+                ga('pageData.set', 'dimension2', 
+'|python|unicode|indic|');
+                ga('send', 'pageview');
+                ga('pageData.send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + 
+'.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + 
+'.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = 
+newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i)
+ || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') 
+service =  2;
+                                    else if (service === 'Place') 
+service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', 
+function() {
+                                        
+StackExchange.gps.track('google_maps_places_api.call', { service: 
+service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+
+<div class="adsbox" id="clc-abd" style="position: absolute; pointer-events: none;">&nbsp;</div><iframe id="google_osd_static_frame_9395403561196" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

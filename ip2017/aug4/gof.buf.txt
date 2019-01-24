@@ -1,0 +1,56 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? []::[]
+[[]] : [[a]]
+? "Pravin"
+Pravin
+? :t"Pravin"
+Command not recognised.  Type :? for help
+? :t "Pravin"
+"Pravin" : String
+? :t 101
+101 : Int
+? :["Pravin", 101, 91,90,80]
+Command not recognised.  Type :? for help
+? ["Pravin", 101, 91,90,80]
+
+ERROR: Type error in list
+*** expression     : ["Pravin",101,91,90,80]
+*** term           : 101
+*** type           : Int
+*** does not match : [Char]
+
+? ("Pravin", 101, 91,90,80)
+("Pravin",101,91,90,80) : ([Char],Int,Int,Int,Int)
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug4/marks.gs
+? :t marks
+marks : [([Char],Int,Int,Int,Int)]
+? marks
+[("Pravin",101,91,90,80), ("Jayshree",102,80,99,74)] : [([Char],Int,Int,Int,Int)]
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug4/marks.gs
+? marks
+[("Pravin",101,91,90,80), ("Jayshree",102,80,99,74), ("Vaibhav",103,80,80,80), ("Shubham",104,74,79,80)] : [([Char],Int,Int,Int,Int)]
+? [x | x<- [1...10]]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [Int]
+? [x+1 | x<- [1...10]]
+[2, 3, 4, 5, 6, 7, 8, 9, 10, 11] : [Int]
+? [x | x<- marks]
+[("Pravin",101,91,90,80), ("Jayshree",102,80,99,74), ("Vaibhav",103,80,80,80), ("Shubham",104,74,79,80)] : [([Char],Int,Int,Int,Int)]
+? [name | (name, roll,m1,m2,m3)<- marks]
+["Pravin", "Jayshree", "Vaibhav", "Shubham"] : [[Char]]
+? [(name, m1+m2) | (name, roll,m1,m2,m3)<- marks]
+[("Pravin",181), ("Jayshree",179), ("Vaibhav",160), ("Shubham",153)] : [([Char],Int)]
+? [(name, m1+m2) | (name, roll,m1,m2,m3)<- marks, m2>80]
+[("Pravin",181), ("Jayshree",179)] : [([Char],Int)]
+? 

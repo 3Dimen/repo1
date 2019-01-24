@@ -1,0 +1,100 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug8/8.gs
+? x
+1 : Int
+? 1
+1 : Int
+? [1,2,3]
+[1, 2, 3] : [Int]
+? [1,2,3] ++ [4,5,8]
+[1, 2, 3, 4, 5, 8] : [Int]
+? "123"
+123
+? [1...10]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [Int]
+? [x| x<-[1...10]]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [Int]
+? [x+1| x<-[1...10]]
+[2, 3, 4, 5, 6, 7, 8, 9, 10, 11] : [Int]
+? [x+1| x<-[1...10]]
+[2, 3, 4, 5, 6, 7, 8, 9, 10, 11] : [Int]
+? 
+ERROR "/home/anu/pucsd/ip2017/aug8/8.gs" (line 3): Attempt to redefine variable "sum"
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug8/8.gs
+? :t sum1
+sum1 : Int -> Int
+? sum1.0
+0 : Int
+? sum1.3
+6 : Int
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug8/8.gs
+? :t suml
+suml : [Int] -> Int
+? suml.[1]
+1 : Int
+? suml.[]
+0 : Int
+? suml.[1...10]
+55 : Int
+? [1,2] ++ [3,4]
+[1, 2, 3, 4] : [Int]
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug8/8.gs
+? app1
+app1 : [a] -> [a] -> [a]
+? app1.[2].[]
+[2] : [Int]
+? app1.[2,3].[a]
+
+EROR: Undefined variable "a"
+? app1.[2,3].['a']
+ERROR: Type error in application
+*** expression     : app1.[2,3].['a']
+*** term           : [2,3]
+*** type           : [Int]
+*** does not match : [Char]
+
+? app1.['b'].['a']
+ba
+? app1."hello". "world"
+helloworld
+? app1.[[1,2,3],[4,5,6]].[[1],[3]]
+[[1, 2, 3], [4, 5, 6], [1], [3]] : [[Int]]
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug8/8.gs
+? len.[1,2,4]
+3 : Int
+? [1] == 1::[]
+True : Bool
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug8/8.gs
+? len.[1,2,3]
+3 : Int
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug8/8.gs
+? rev.[1...4]
+[4, 3, 2, 1] : [Int]
+? 

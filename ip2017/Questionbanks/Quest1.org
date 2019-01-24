@@ -1,0 +1,26 @@
+#+TITLE: Question Bank
+       
+HINT: Always give types before functions\\
+      When writing Inductive definitions, clarify the hypothesis
+#+OPTIONS: toc:nil
+*  
+ Write an inductive gofer function nth to find the nth element of a list
+#+BEGIN_SOURCE 
+  ? nth. 5. [1,2,3,4,5] 
+   5
+#+END_SOURCE
+
+* 
+  Write a gofer function to find the inner product of two vectors where each vector is represented as a [Int]
+* 
+  Write a gofer function *tk* that returns the first n elements of a list
+#+BEGIN_SOURCE
+  ? tk. 2. [1...10]
+   [1,2]
+#+END_SOURCE
+* 
+  Give a gofer definition for a function that computes pythagorean triples
+  Pythagorean triples satisfy \
+  x² + y² = z²
+* 
+  Define a function gcd that takes two Int arguments and computes their gcd

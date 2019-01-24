@@ -1,0 +1,73 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? list_reduce
+list_reduce : (a -> b -> b) -> b -> [a] -> b
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? :t list_reduce
+list_reduce : (Int -> Int -> Int) -> Int -> [Int] -> Int
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? :t list_reduce
+list_reduce : (a -> b -> b) -> b -> [a] -> b
+? undefined
+
+Program error: {undefined}
+
+
+? :t undefined
+undefined : a
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? :t op2
+op2 : a -> b -> c
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? :t list_reduce
+list_reduce : a -> b -> [c] -> d
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? :t sum3
+sum3 : [a] -> b
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? :t list_reduce
+list_reduce : a -> b -> [c] -> b
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? :t list_reduce
+list_reduce : (a -> b -> b) -> b -> [a] -> b
+? :t (+)
+(+) : Int -> Int -> Int
+? 1.2 + 2.3
+
+ERROR: Type error in application
+*** expression     : 1.2 + 2.3
+*** term           : 2.3
+*** type           : Float
+*** does not match : Int
+
+? 

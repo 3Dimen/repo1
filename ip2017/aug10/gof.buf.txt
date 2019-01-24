@@ -1,0 +1,71 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? undefined
+
+Program error: {undefined}
+
+
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug10/questionset1.gs
+? tk.[1,2,3,4].3
+[1, 2, 3] : [Int]
+? tk.[].n
+
+ERROR: Undefined variable "n"
+? tk.[].2
+
+Program error: {undefined}
+
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug10/questionset1.gs
+?:t inner
+inner : [Int] -> [Int] -> Int
+? inner.[].[]
+0 : Int
+? inner.[1,2,3].[1,2,3]
+14 : Int
+? 
+ERROR "/home/anu/pucsd/ip2017/aug10/questionset1.gs" (line 9): Type error in application
+*** expression     : x * y + inner.l1.l2
+*** term           : inner.l1.l2
+*** type           : [a]
+*** does not match : Int
+
+? 
+ERROR "/home/anu/pucsd/ip2017/aug10/questionset1.gs" (line 8): Type error in function binding
+*** term           : inner
+*** type           : [a] -> [b] -> [c]
+*** does not match : [Int] -> [Int] -> Int
+
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug10/questionset1.gs
+? :t nth
+nth : [Int] -> Int -> Int
+? 2^2
+4 : Int
+? [(x,y,z)| x<-[1...10], y<-[1...10], z<-[1...10], x^2 + y^2 == z^2]
+[(3,4,5), (4,3,5), (6,8,10), (8,6,10)] : [(Int,Int,Int)]
+? [(x,y,z)| x<-[1...10], y<-[x...10], z<-[y...10], x^2 + y^2 == z^2]
+[(3,4,5), (6,8,10)] : [(Int,Int,Int)]
+? [x+1 | x <- [1...10]]
+[2, 3, 4, 5, 6, 7, 8, 9, 10, 11] : [Int]
+? [x*x | x <- [1...10]]
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100] : [Int]
+? ord
+ord : Char -> Int
+? ord.'A'
+65 : Int
+? [ord.x | x <- "asdfg"]
+[97, 115, 100, 102, 103] : [Int]
+? 

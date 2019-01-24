@@ -1,0 +1,123 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? sum1.[1,2,3]
+6 : Int
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? mul1.[1,2,3]
+6 : Int
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? len1.[1,2,3]
+3 : Int
+? 1+2
+3 : Int
+? (+1).1 .2
+
+ERROR: Type error in application
+*** expression     : flip.(+).1.1.2
+*** term           : (+)
+*** type           : Int -> Int -> Int
+*** does not match : Int -> Int -> Int -> a
+
+? (+).1. 2
+3 : Int
+? (1+). 2
+3 : Int
+? :(1+)
+Command not recognised.  Type :? for help
+? :t (1+)
+(1 +) : Int -> Int
+? mod.3. 2
+1 : Int
+? 3 `mod` 2
+1 : Int
+? 
+ERROR "/home/anu/pucsd/ip2017/aug16/list-reduce.gs" (line 14): Juxtaposition has no meaning. Use .
+? 
+ERROR "/home/anu/pucsd/ip2017/aug16/list-reduce.gs" (line 15): Undefined variable "op"
+? [True,False,True,False]
+[True, False, True, False] : [Bool]True &&True
+? [True, False, True, False] : [Bool]True &&True
+? 
+ERROR: Syntax Error in type expression (application expected)
+? ERROR: Syntax error in expression (unexpected symbol "?")
+? [True, False, True, False] : [Bool]True &&True
+? True && True
+ERROR: Syntax Error in type expression (application expected)
+? ERROR: Syntax error in expression (unexpected symbol "?")
+? [True, False, True, False] : [Bool]True &&True
+? :t (&&)
+ERROR: Syntax Error in type expression (application expected)
+? ERROR: Syntax error in expression (unexpected symbol "?")
+? True and True
+ERROR: Juxtaposition has no meaning. Use .
+? :t and
+and : [Bool] -> Bool
+? :and.[True,False,True]
+Command not recognised.  Type :? for help
+? and.[True,False,True]
+False : Bool
+? True && False
+False : Bool
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? myand.[True,False,True]
+False : Bool
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? (list_reduce.(+).0). [1,2,3,4]
+10 : Int
+? (list_reduce.(*).1). [1,2,3,4]
+24 : Int
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? (list_reduce.lenop.0). [1,2,3,4]
+4 : Int
+? (list_reduce.(&&). True).[True,True,False]
+
+ERROR: Type error in application
+*** expression     : list_reduce.(&&).True.[True,True,False]
+*** term           : [True,True,False]
+*** type           : [Bool]
+*** does not match : [Int]
+
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug16/list-reduce.gs
+? (list_reduce.(&&). True).[True,True,False]
+False : Bool
+? (list_reduce.(++).[]).[[1,2],[3,4]]
+[1, 2, 3, 4] : [Int]
+? 1::(2::(3::[])
+
+ERROR: Syntax error in expression (unexpected end of input)
+? 1::(2::(3::[])
+ERROR: Syntax error in expression (unexpected end of input)
+? 1::(2::(3::[]))
+[1, 2, 3] : [Int]
+? (list_reduce.(::).[]).[1...10]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10] : [Int]
+? [1,2]::[]
+[[1, 2]] : [[Int]]
+? 1::2::3::[]

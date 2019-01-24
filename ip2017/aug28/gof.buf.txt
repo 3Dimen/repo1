@@ -1,0 +1,45 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? h.5
+
+ERROR: Undefined variable "h"
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug1/fib.gs
+? h.5
+5 : Int
+? :s +s
+? :s +s
+? h.5
+5 : Int
+(18 reductions, 26 cells)
+? h.10
+55 : Int
+(218 reductions, 277 cells)
+? h.15
+610 : Int
+(2438 reductions, 3053 cells)
+? h.20
+6765 : Int
+(27058 reductions, 33829 cells)
+? gg.5
+5 : Int
+(18 reductions, 52 cells)
+? gg.10
+55 : Int
+(38 reductions, 108 cells)
+? gg.15
+610 : Int
+(58 reductions, 164 cells)
+? gg.20
+6765 : Int
+(78 reductions, 220 cells)
+? [Leaving Gofer]
+
+Process pugofer finished

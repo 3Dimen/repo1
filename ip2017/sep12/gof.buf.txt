@@ -1,0 +1,62 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/sep12/map.gs
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/sep12/map.gs
+? map0
+map0 : (a -> b) -> [a] -> [b]
+? map1
+map1 : (a -> b) -> [a] -> [b]
+? map.(1+).[1,2,3,4]
+[2, 3, 4, 5] : [Int]
+? map0.(1+).[1,2,3,4]
+[2, 3, 4, 5] : [Int]
+? map1.(1+).[1,2,3,4]
+[2, 3, 4, 5] : [Int]
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/sep12/map.gs
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/sep12/map.gs
+? :t map2
+map2 : (a -> b) -> [a] -> [b]
+? map2.(1+).[1,2,3,4]
+[2, 3, 4, 5] : [Int]
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/sep12/map.gs
+? :t map2
+map2 : (a -> b) -> [a] -> [b]
+? :t map3
+map3 : (a -> b) -> [a] -> [b]
+? map3.(1+).[1,2,3,4]
+[2, 3, 4, 5] : [Int]
+? 
+ERROR "/home/anu/pucsd/ip2017/sep12/map.gs" (line 17): Undefined variable "a"
+? 
+ERROR "/home/anu/pucsd/ip2017/sep12/map.gs" (line 17): Type error in function binding
+*** term           : map4
+*** type           : (a -> b) -> [a] -> [b]
+*** does not match : [a] -> [a] -> [b]
+
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/sep12/map.gs
+? :t map4
+map4 : (a -> b) -> [a] -> [b]
+? 

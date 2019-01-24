@@ -1,0 +1,105 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+f. 'A'? :f map
+(pu-find-file "/home/rusi/pdsw/gofer/gofer-master/pusimple.pre" 311)
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug17/list-reduce.gs
+? :t f
+f : a -> Int
+? f. 1
+4 : Int
+? f.True
+4 : Int
+? f. 'A'
+4 : Int
+? f .[1,2,3,4]
+4 : Int
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug17/list-reduce.gs
+? :t g
+g : a -> a
+? g. 1
+1 : Int
+? g.2
+2 : Int
+? g.[1,2,3]
+[1, 2, 3] : [Int]
+? g.True
+True : Bool
+? g.(1+)
+(1 +) : Int -> Int
+? :t undefined
+undefined : a
+? 
+ERROR "/home/anu/pucsd/ip2017/aug17/list-reduce.gs" (line 31): Undefined variable "y"
+? undefined
+
+Program error: {undefined}
+
+? 
+ERROR "/home/anu/pucsd/ip2017/aug17/list-reduce.gs" (line 31): Undefined variable "y"
+? undefined
+
+Program error: {undefined}
+
+? 
+ERROR "/home/anu/pucsd/ip2017/aug17/list-reduce.gs" (line 31): Undefined variable "y"
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug17/list-reduce.gs
+? :t q
+q : a -> b
+? q.1
+
+Program error: {undefined}
+
+
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug17/list-reduce.gs
+? :t op2
+op2 : a -> b -> c
+? :t undefined
+undefined : a
+? :t [1,2,3]
+[1,2,3] : [Int]
+? :t [undefined]
+[undefined] : [a]
+? :t (1,2)
+(1,2) : (Int,Int)
+? :t (1,True)
+(1,True) : (Int,Bool)
+? :t (1,True.'A')
+
+ERROR: Type error in application
+*** expression     : True.'A'
+*** term           : True
+*** type           : Bool
+*** does not match : a -> b
+
+? :t (1,True,'A')
+(1,True,'A') : (Int,Bool,Char)
+? (undefined, undefined)
+(
+Program error: {undefined}
+
+? :t (undefined, undefined)
+(undefined,undefined) : (a,b)
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/aug17/list-reduce.gs
+? :t list_reduce
+list_reduce : a -> b -> [c] -> b
+? 

@@ -1,0 +1,26 @@
+#+TITLE: Links
+#+STARTUP: showall
+* Intro
+1. Open this file in emacs
+2. Use C-c C-o on each link to open in browser
+* Blog.Languager.Org links
+- [[http://blog.languager.org/2014/09/pugofer.html][Brief history of pugofer]] including sub links to more detailed writings
+- [[http://blog.languager.org/2013/08/applying-si-on-sicp.html][Why lisp is important]] (probably hard to read… One of the original inventors of Unix — Doug McIllroy — thanked me for it!
+- [[http://blog.languager.org/2015/04/cs-history-1.html][FP history timeline]] and [[http://blog.languager.org/2015/06/functional-programming-moving-target.html][more details]]
+- [[http://blog.languager.org/2012/10/functional-programming-lost-booty.html][FP The lost booty]] — Writing on FP that for a long time was getting maximum hits
+- Why [[http://blog.languager.org/2013/02/c-in-education-and-software-engineering.html][programming with C]] pickles students' brains
+- More general articles on CS history
+  [[http://blog.languager.org/2015/03/cs-history-0.html][Pre-history]]
+  [[http://blog.languager.org/2015/07/cs-history-2.html][More on Gödel]]
+
+* Stackoverflow
+[[https://stackoverflow.com/questions/25855507/are-typeclasses-essential][Question about typeclasses]]
+[[https://stackoverflow.com/a/26071288][My answer]] gives an example of Haskell vs gofer confusingness of errors
+
+* Settings                                                         :noexport:
+:PROPERTIES:
+:VISIBILITY: overview
+:END:
+/* Local Variables:  */
+/* mode: org           */
+/* End:              */

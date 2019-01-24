@@ -1,0 +1,105 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? :p denot.gp
+
+Gofer session for: (project: denot.gp)
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+denot.lgs
+abssyntax.lgs
+translate.lgs
+? p2
+While.(Less.(Ivar."i").(Icon.10)).(Assgn."i".(Arith.(Add.(Ivar."i").(Icon.1)))) : Statement
+? ts.p2
+ts.p2 : [([Char],Value)] -> [([Char],Value)]
+? ts.p2.state
+[("i",Ival.10)] : [([Char],Value)]
+? [1,2,3]
+[1, 2, 3] : [Int]
+? [True,False]
+[True, False] : [Bool]
+? [True,False,1]
+
+ERROR: Type error in list
+*** expression     : [True,False,1]
+*** term           : 1
+*** type           : Int
+*** does not match : Bool
+
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/acm_semantics/denot/denot.lgs
+? [1,True]
+
+ERROR: Type error in list
+*** expression     : [1,True]
+*** term           : True
+*** type           : Bool
+*** does not match : Int
+
+? [Ival.1, Bval.True]
+[Ival.1, Bval.True] : [Value]
+? :t lookup
+lookup : State -> Variable -> Value
+? :t setstate
+setstate : State -> Variable -> Value -> State
+? :t error
+error : String -> a
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/acm_semantics/denot/denot.lgs
+? :t lookup
+lookup : State -> Variable -> Value
+? st
+
+ERROR: Undefined variable "st"
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/acm_semantics/denot/denot.lgs
+? st
+[("x",Ival.1), ("b",Bval.True)] : [([Char],Value)]
+? lookup.st."x"
+Ival.1 : Value
+? lookup.st."b"
+Bval.True : Value
+? lookup.st."jjj"
+
+Program error: lookup: jjjnot defined in state
+
+
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/acm_semantics/denot/denot.lgs
+? lookup.st."jjj"
+
+Program error: {lookup.[]."jjj"}
+
+
+? :l abssyntax.lgs translate.lgs denot.lgs
+
+ERROR "abssyntax.lgs" (line 18): Undefined type constructor "Variable"
+? :l denot.lgs  abssyntax.lgs translate.lgs 
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+denot.lgs
+abssyntax.lgs
+translate.lgs
+? ts.prog.state
+[("i",Ival.10)] : [([Char],Value)]
+? :p denot.gp
+
+Gofer session for: (project: denot.gp)
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+denot.lgs
+abssyntax.lgs
+translate.lgs
+? 

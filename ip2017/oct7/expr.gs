@@ -1,0 +1,12 @@
+
+ctype Op where
+  Plus, Mul : Op
+ctype Exp where
+  Lf: Int -> Exp
+  Br: Op -> Exp-> Exp -> Exp
+
+
+--optable = [(Plus
+eval. (Lf.v) = v
+eval. (Br.Plus.e1.e2) = eval.e1 + eval.e2
+eval. (Br.Mul.e1.e2)  = eval.e1 * eval.e2

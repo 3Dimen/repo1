@@ -1,0 +1,9 @@
+* Links
+- Some stuff I had collected for students about [[https://bitbucket.org/rustom/vit-projects/wiki/emacs][emacs]] 
+- Particularly for [[https://bitbucket.org/rustom/vit-projects/wiki/emacsasdefault][emacs as default]] editor
+  Note this is more specifically for ubuntu/unity.
+  gnome/xfce path of desktop file may be different
+- Line needed for not having ~-files litter directories
+  #+BEGIN_SRC elisp
+  (setq  backup-directory-alist '(("." . "~/.emacs.d/emacs-saves")))
+  #+END_SRC

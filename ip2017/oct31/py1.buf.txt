@@ -1,0 +1,39 @@
+Python 3.6.0 |Anaconda 4.3.0 (64-bit)| (default, Dec 23 2016, 12:22:00) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> >>> >>> >>> from os import listidr
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: cannot import name 'listidr'
+>>> from os import listdir
+>>> listdir(".")
+['file0', 'walk.py', 'dir1', 'walk1.py']
+>>> from os import isfile
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: cannot import name 'isfile'
+>>> from os.path import isfile
+>>> from os.path import isdir
+>>> isfile("file0")
+True
+>>> isfile("dir0")
+False
+>>> isdir("dir0")
+False
+>>> isdir("dir1")
+True
+>>> from os.path import join
+>>> help(join)
+Help on function join in module posixpath:
+
+join(a, *p)
+    Join two or more pathname components, inserting '/' as needed.
+    If any component is an absolute path, all previous path components
+    will be discarded.  An empty last part will result in a path that
+    ends with a separator.
+
+>>> join("a", "b")
+'a/b'
+>>> "a" + "/" + "b"
+'a/b'
+>>> 

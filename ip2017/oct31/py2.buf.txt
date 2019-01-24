@@ -1,0 +1,252 @@
+Python 3.6.0 |Anaconda 4.3.0 (64-bit)| (default, Dec 23 2016, 12:22:00) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> >>> >>> >>> >>> mywalk(".")
+Call .
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/anu/pucsd/ip2017/oct31/walk/walk1.py", line 13, in mywalk
+    return files + [y  for x in dirs for y in mywalk(join(fpath,x))]
+NameError: name 'fullist' is not defined
+>>> mywalk(".")
+Call .
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/anu/pucsd/ip2017/oct31/walk/walk1.py", line 13, in mywalk
+    return files + [y  for x in dirs for y in mywalk(join(fpath,x))]
+TypeError: not all arguments converted during string formatting
+>>> mywalk(".")
+Call .
+files ['file0', 'walk.py', '#walk1.py#', 'walk1.py'] dirs ['dir1'] fulllist ['file0', '.#walk1.py', 'walk.py', '#walk1.py#', 'dir1', 'walk1.py']
+
+>>> mywalk(".")
+Call .
+files ['file0', 'walk.py', '#walk1.py#', 'walk1.py'] 
+dirs
+['dir1'] fulllist ['file0', '.#walk1.py', 'walk.py', '#walk1.py#', 'dir1', 'walk1.py']
+
+>>> mywalk(".")
+files ['file0', 'walk.py', '#walk1.py#', 'walk1.py'] 
+dirs ['dir1'] 
+fulllist ['file0', '.#walk1.py', 'walk.py', '#walk1.py#', 'dir1', 'walk1.py']
+
+>>> from os.path import getcwd
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: cannot import name 'getcwd'
+>>> from os import getcwd
+>>> help(getcwd)
+Help on built-in function getcwd in module posix:
+
+getcwd()
+    Return a unicode string representing the current working directory.
+
+>>> getcwd()
+'/home/anu/pucsd/ip2017/oct31/walk'
+>>> list(".")
+['.']
+>>> listdir(".")
+['file0', '.#walk1.py', 'walk.py', '#walk1.py#', 'dir1', 'walk1.py']
+>>> import os
+>>> dir(os)
+['CLD_CONTINUED', 'CLD_DUMPED', 'CLD_EXITED', 'CLD_TRAPPED', 'DirEntry', 'EX_CANTCREAT', 'EX_CONFIG', 'EX_DATAERR', 'EX_IOERR', 'EX_NOHOST', 'EX_NOINPUT', 'EX_NOPERM', 'EX_NOUSER', 'EX_OK', 'EX_OSERR', 'EX_OSFILE', 'EX_PROTOCOL', 'EX_SOFTWARE', 'EX_TEMPFAIL', 'EX_UNAVAILABLE', 'EX_USAGE', 'F_LOCK', 'F_OK', 'F_TEST', 'F_TLOCK', 'F_ULOCK', 'MutableMapping', 'NGROUPS_MAX', 'O_ACCMODE', 'O_APPEND', 'O_ASYNC', 'O_CREAT', 'O_DIRECT', 'O_DIRECTORY', 'O_DSYNC', 'O_EXCL', 'O_LARGEFILE', 'O_NDELAY', 'O_NOATIME', 'O_NOCTTY', 'O_NOFOLLOW', 'O_NONBLOCK', 'O_RDONLY', 'O_RDWR', 'O_RSYNC', 'O_SYNC', 'O_TRUNC', 'O_WRONLY', 'POSIX_FADV_DONTNEED', 'POSIX_FADV_NOREUSE', 'POSIX_FADV_NORMAL', 'POSIX_FADV_RANDOM', 'POSIX_FADV_SEQUENTIAL', 'POSIX_FADV_WILLNEED', 'PRIO_PGRP', 'PRIO_PROCESS', 'PRIO_USER', 'P_ALL', 'P_NOWAIT', 'P_NOWAITO', 'P_PGID', 'P_PID', 'P_WAIT', 'PathLike', 'RTLD_DEEPBIND', 'RTLD_GLOBAL', 'RTLD_LAZY', 'RTLD_LOCAL', 'RTLD_NODELETE', 'RTLD_NOLOAD', 'RTLD_NOW', 'R_OK', 'SCHED_BATCH', 'SCHED_FIFO', 'SCHED_OTHER', 'SCHED_RR', 'SEEK_CUR', 'SEEK_END', 'SEEK_SET', 'ST_APPEND', 'ST_MANDLOCK', 'ST_NOATIME', 'ST_NODEV', 'ST_NODIRATIME', 'ST_NOEXEC', 'ST_NOSUID', 'ST_RDONLY', 'ST_SYNCHRONOUS', 'ST_WRITE', 'TMP_MAX', 'WCONTINUED', 'WCOREDUMP', 'WEXITED', 'WEXITSTATUS', 'WIFCONTINUED', 'WIFEXITED', 'WIFSIGNALED', 'WIFSTOPPED', 'WNOHANG', 'WNOWAIT', 'WSTOPPED', 'WSTOPSIG', 'WTERMSIG', 'WUNTRACED', 'W_OK', 'XATTR_CREATE', 'XATTR_REPLACE', 'XATTR_SIZE_MAX', 'X_OK', '_Environ', '__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', '_execvpe', '_exists', '_exit', '_fspath', '_fwalk', '_get_exports_list', '_putenv', '_spawnvef', '_unsetenv', '_wrap_close', 'abc', 'abort', 'access', 'altsep', 'chdir', 'chmod', 'chown', 'chroot', 'close', 'closerange', 'confstr', 'confstr_names', 'cpu_count', 'ctermid', 'curdir', 'defpath', 'device_encoding', 'devnull', 'dup', 'dup2', 'environ', 'environb', 'errno', 'error', 'execl', 'execle', 'execlp', 'execlpe', 'execv', 'execve', 'execvp', 'execvpe', 'extsep', 'fchdir', 'fchmod', 'fchown', 'fdatasync', 'fdopen', 'fork', 'forkpty', 'fpathconf', 'fsdecode', 'fsencode', 'fspath', 'fstat', 'fstatvfs', 'fsync', 'ftruncate', 'fwalk', 'get_blocking', 'get_exec_path', 'get_inheritable', 'get_terminal_size', 'getcwd', 'getcwdb', 'getegid', 'getenv', 'getenvb', 'geteuid', 'getgid', 'getgrouplist', 'getgroups', 'getloadavg', 'getlogin', 'getpgid', 'getpgrp', 'getpid', 'getppid', 'getpriority', 'getresgid', 'getresuid', 'getsid', 'getuid', 'getxattr', 'initgroups', 'isatty', 'kill', 'killpg', 'lchown', 'linesep', 'link', 'listdir', 'listxattr', 'lockf', 'lseek', 'lstat', 'major', 'makedev', 'makedirs', 'minor', 'mkdir', 'mkfifo', 'mknod', 'name', 'nice', 'open', 'openpty', 'pardir', 'path', 'pathconf', 'pathconf_names', 'pathsep', 'pipe', 'popen', 'posix_fadvise', 'posix_fallocate', 'pread', 'putenv', 'pwrite', 'read', 'readlink', 'readv', 'remove', 'removedirs', 'removexattr', 'rename', 'renames', 'replace', 'rmdir', 'scandir', 'sched_get_priority_max', 'sched_get_priority_min', 'sched_getparam', 'sched_getscheduler', 'sched_param', 'sched_rr_get_interval', 'sched_setparam', 'sched_setscheduler', 'sched_yield', 'sendfile', 'sep', 'set_blocking', 'set_inheritable', 'setegid', 'seteuid', 'setgid', 'setgroups', 'setpgid', 'setpgrp', 'setpriority', 'setregid', 'setresgid', 'setresuid', 'setreuid', 'setsid', 'setuid', 'setxattr', 'spawnl', 'spawnle', 'spawnlp', 'spawnlpe', 'spawnv', 'spawnve', 'spawnvp', 'spawnvpe', 'st', 'stat', 'stat_float_times', 'stat_result', 'statvfs', 'statvfs_result', 'strerror', 'supports_bytes_environ', 'supports_dir_fd', 'supports_effective_ids', 'supports_fd', 'supports_follow_symlinks', 'symlink', 'sync', 'sys', 'sysconf', 'sysconf_names', 'system', 'tcgetpgrp', 'tcsetpgrp', 'terminal_size', 'times', 'times_result', 'truncate', 'ttyname', 'umask', 'uname', 'uname_result', 'unlink', 'unsetenv', 'urandom', 'utime', 'wait', 'wait3', 'wait4', 'waitid', 'waitid_result', 'waitpid', 'walk', 'write', 'writev']
+>>> from os import chdir
+>>> help(chdir)
+Help on built-in function chdir in module posix:
+
+chdir(path)
+    Change the current working directory to the specified path.
+    
+    path may always be specified as a string.
+    On some platforms, path may also be specified as an open file descriptor.
+      If this functionality is unavailable, using it raises an exception.
+
+>>> getcwd()
+'/home/anu/pucsd/ip2017/oct31/walk'
+>>> chdir("..")
+>>> getcwd()
+'/home/anu/pucsd/ip2017/oct31'
+>>> chdir("..")
+>>> getcwd()
+'/home/anu/pucsd/ip2017'
+>>> listdir("oct31/walk")
+['file0', '.#walk1.py', 'walk.py', '#walk1.py#', 'dir1', 'walk1.py']
+>>> listdir(".")
+['aug3', 'sep5and7', 'aug4', 'sept4', 'aug8', 'oct24test', 'aug1', 'Questionbanks', 'aug9', 'sep15', 'oct7', 'per.gs', 'aug10', 'sep9', 'oct28test', 'sept1', 'aug7', 'sep12', 'references', 'oct31', 'aug22', 'aug17', 'sep4', 'oct27complaintsclass', 'aug21', 'aug16', 'aug11', 'oct26trans', 'aug5', 'oct16', 'README.org', 'aug28', 'oct25devanagari', 'aug18', '.git', 't1.gs', 'oct5', 'aug2']
+>>> mywalk("oct31/walk")
+files ['file0', 'walk.py', '#walk1.py#', 'walk1.py'] 
+dirs ['dir1'] 
+fulllist ['file0', '.#walk1.py', 'walk.py', '#walk1.py#', 'dir1', 'walk1.py']
+
+>>> listdir(".")
+['aug3', 'sep5and7', 'aug4', 'sept4', 'aug8', 'oct24test', 'aug1', 'Questionbanks', 'aug9', 'sep15', 'oct7', 'per.gs', 'aug10', 'sep9', 'oct28test', 'sept1', 'aug7', 'sep12', 'references', 'oct31', 'aug22', 'aug17', 'sep4', 'oct27complaintsclass', 'aug21', 'aug16', 'aug11', 'oct26trans', 'aug5', 'oct16', 'README.org', 'aug28', 'oct25devanagari', 'aug18', '.git', 't1.gs', 'oct5', 'aug2']
+>>> mywalk("oct31/walk")
+['file0', 'walk.py', '#walk1.py#', 'walk1.py', 'file11']
+>>> mywalk("oct31/walk")
+['file0', 'walk.py', '#walk1.py#', 'walk1.py', 'file11', 'file111']
+>>> walkpr("oct31/walk")
+P: file0
+P: walk.py
+P: #walk1.py#
+P: walk1.py
+Entering rec with oct31/walk/dir1
+
+P: file11
+Entering rec with oct31/walk/dir1/dir11
+
+P: file111
+>>> 
+>>> def strange(x):
+...   yield x
+...   yield x+1
+...   yield x+2
+... 
+>>> strangestrange = strange(5)
+>>> next(strangestrange)
+5
+>>> next(strangestrange)
+6
+>>> next(strangestrange)
+7
+>>> next(strangestrange)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>> strangestrange = strange(5)
+>>> for x in strangestrange:
+...   print(x)
+... 
+5
+6
+7
+>>> for x in strange(5): print (x)
+... 
+5
+6
+7
+>>> strange(5)
+<generator object strange at 0x7f6221e28888>
+>>> list(strange(5))
+[5, 6, 7]
+>>> 
+>>> def foo():
+...   yield 1
+...   yield 2
+...   yield 3
+... 
+>>> list(foo())
+[1, 2, 3]
+>>> import inspect as i
+>>> i.isfunction(foo)
+True
+>>> i.isgeneratorfunction(foo)
+True
+>>> def bar(x):
+...   return x+1
+... 
+>>> i.isfunction(bar)
+True
+>>> i.isgeneratorfunction(bar)
+False
+>>> i.isgenerator
+<function isgenerator at 0x7f62211dee18>
+>>> i.isgenerator(foo)
+False
+>>> i.isgenerator(bar)
+False
+>>> i.isgenerator(foo())
+True
+>>> for x in foo(): print(X)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'X' is not defined
+>>> for x in foo(): print(x)
+... 
+1
+2
+3
+>>> for x in foo: print(x)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'function' object is not iterable
+>>> for x in [foo]: print(x)
+... 
+<function foo at 0x7f6220b659d8>
+>>> l=[1,2,3,4]
+>>> dir(l)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+>>> l.__getitem__(0)
+1
+>>> l=[10,20,30,40]
+>>> l.__getitem__(0)
+10
+>>> l.__getitem__(1)
+20
+>>> l.__getitem__(2)
+30
+>>> l.__getitem__(3)
+40
+>>> from os import walk
+>>> help(walk)
+Help on function walk in module os:
+
+walk(top, topdown=True, onerror=None, followlinks=False)
+    Directory tree generator.
+    
+    For each directory in the directory tree rooted at top (including top
+    itself, but excluding '.' and '..'), yields a 3-tuple
+    
+        dirpath, dirnames, filenames
+    
+    dirpath is a string, the path to the directory.  dirnames is a list of
+    the names of the subdirectories in dirpath (excluding '.' and '..').
+    filenames is a list of the names of the non-directory files in dirpath.
+    Note that the names in the lists are just names, with no path components.
+    To get a full path (which begins with top) to a file or directory in
+    dirpath, do os.path.join(dirpath, name).
+    
+    If optional arg 'topdown' is true or not specified, the triple for a
+    directory is generated before the triples for any of its subdirectories
+    (directories are generated top down).  If topdown is false, the triple
+    for a directory is generated after the triples for all of its
+    subdirectories (directories are generated bottom up).
+    
+    When topdown is true, the caller can modify the dirnames list in-place
+    (e.g., via del or slice assignment), and walk will only recurse into the
+    subdirectories whose names remain in dirnames; this can be used to prune the
+    search, or to impose a specific order of visiting.  Modifying dirnames when
+    topdown is false is ineffective, since the directories in dirnames have
+    already been generated by the time dirnames itself is generated. No matter
+    the value of topdown, the list of subdirectories is retrieved before the
+    tuples for the directory and its subdirectories are generated.
+    
+    By default errors from the os.scandir() call are ignored.  If
+    optional arg 'onerror' is specified, it should be a function; it
+    will be called with one argument, an OSError instance.  It can
+    report the error to continue with the walk, or raise the exception
+    to abort the walk.  Note that the filename is available as the
+    filename attribute of the exception object.
+    
+    By default, os.walk does not follow symbolic links to subdirectories on
+    systems that support them.  In order to get this functionality, set the
+    optional argument 'followlinks' to true.
+    
+    Caution:  if you pass a relative pathname for top, don't change the
+    current working directory between resumptions of walk.  walk never
+    changes the current directory, and assumes that the client doesn't
+    either.
+    
+    Example:
+    
+    import os
+    from os.path import join, getsize
+    for root, dirs, files in os.walk('python/Lib/email'):
+        print(root, "consumes", end="")
+        print(sum([getsize(join(root, name)) for name in files]), end="")
+        print("bytes in", len(files), "non-directory files")
+        if 'CVS' in dirs:
+            dirs.remove('CVS')  # don't visit CVS directories
+
+>>> 

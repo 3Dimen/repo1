@@ -1,0 +1,66 @@
+Gofer Version 2.30a
+Modifications for pugofer Rusi Mody
+Copyright (c) Mark P Jones 1991-1994
+Copyright (c) Rusi Mody 1995-2015
+
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+? [ord.x | x <- "abc"]
+[97, 98, 99] : [Int]
+? map.ord. "abc"
+[97, 98, 99] : [Int]
+? head.[1,2,3]
+1 : Int
+? tail.[1,2,3]
+[2, 3] : [Int]
+? map.tail.[[1,2,3], [4,5,6], [7,8,9]]
+[[2, 3], [5, 6], [8, 9]] : [[Int]]
+? map.head.[[1,2,3], [4,5,6], [7,8,9]]
+[1, 4, 7] : [Int]
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/sep5/matrix.gs
+? xpose4.[[1,2,3],[4,5,6],[7,8,9]]
+[[1, 4, 7], [2, 5, 8], [3, 6, 9], []] : [[Int]]
+? 
+Gofer session for:
+/home/rusi/pdsw/gofer/gofer-master/pusimple.pre
+/home/anu/pucsd/ip2017/sep5/matrix.gs
+? xpose4.[[1,2,3],[4,5,6],[7,8,9]]
+[[1, 4, 7], [2, 5, 8], [3, 6, 9]] : [[Int]]
+? xpose4.[[1,2,3,12],[4,5,6,11],[7,8,9,10]]
+[[1, 4, 7], [2, 5, 8], [3, 6, 9], [12, 11, 10]] : [[Int]]
+? zip.[1,2,3].[4,5,6]
+[(1,4), (2,5), (3,6)] : [(Int,Int)]
+? zip.[1,2,3].[4,5]
+[(1,4), (2,5)] : [(Int,Int)]
+? zipWith.(+).[1,2,3].[4,5]
+[5, 7] : [Int]
+? zipWith.(+).[1,2,3].[4,5,6]
+[5, 7, 9] : [Int]
+? even.2
+True : Bool
+? filter. even. [1...10]
+[2, 4, 6, 8, 10] : [Int]
+? [x | x<-[1...10], even.x]
+[2, 4, 6, 8, 10] : [Int]
+? reverse.[1,2,3]
+[3, 2, 1] : [Int]
+? ord.'a'
+97 : Int
+? map.ord."asdfg"
+[97, 115, 100, 102, 103] : [Int]
+? 1::[1,2,3]
+[1, 1, 2, 3] : [Int]
+? 1++[1,2,3]
+
+ERROR: Type error in application
+*** expression     : 1 ++ [1,2,3]
+*** term           : 1
+*** type           : Int
+*** does not match : [Int]
+
+? [1]++[1,2,3]
+[1, 1, 2, 3] : [Int]
+? 
