@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 	"bufio"
-	aux "auxiliary"
+	aux "auxiliary" 
 	dbrepo "dbrepository"
 	mongoutils "utils"
 )
@@ -33,7 +33,7 @@ func main() {
 		fmt.Println(option)	
 		
 		switch strings.Trim(option[0],"->") {  
-			
+								//from auxilliary package
 			case "find"   :  aux.FindAccordingToOption(repoAccess,option[1],option[2])
 						     	
 			case "list"   :  aux.ListAllRestaurants(repoAccess)
